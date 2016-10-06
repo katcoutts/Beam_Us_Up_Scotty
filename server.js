@@ -1,0 +1,20 @@
+var express = require('express');
+var app = express();
+var path = require('path');
+
+var bodyParser = require('body-parser');
+
+var DiaryApi = require('./api/diaryApi');
+
+// public declaration 
+
+app.use(bodyParser.json());
+
+app.listen(3000, function(){
+  new DiaryApi(app);
+  console.log('app running on port' + this.address().port);
+});
+
+app.get('/', function(req, res){
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
