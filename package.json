@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/katcoutts/Beam_Us_Up_Scotty#readme",
   "devDependencies": {
+    "body-parser": "^1.15.2",
     "mocha": "^3.1.0"
   },
   "dependencies": {
