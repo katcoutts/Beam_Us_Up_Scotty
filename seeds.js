@@ -7,3 +7,5 @@ db.diary.insert([
     text: "Fixing stuff. Flying about."
   }]
 );
+
+// db.dropDatabase();
