@@ -5,6 +5,19 @@ var Map =  function( container, centre, zoom ){
     zoom: zoom
   });
 
+  var marker;
+
+  this.createMarker = function(){
+    marker = new google.maps.Marker({
+      map: this.googleMap,
+      position: this.googleMap.center
+    })
+  };
+
+  this.addClickListener = function(){
+    google.maps.event.addListener
+  }
+
 
 }
 

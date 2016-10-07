@@ -49,8 +49,10 @@
 	var app = function(){
 	  var container = document.getElementById("welcome_map");
 	  var centre = {lat:0, lng:0};
-	  var zoom = 4;
+	  var zoom = 2;
 	  var map = new Map( container, centre, zoom );
+	
+	  map.createMarker();
 	}
 	
 	window.onload = app;
@@ -65,6 +67,19 @@
 	    center: centre,
 	    zoom: zoom
 	  });
+	
+	  var marker;
+	
+	  this.createMarker = function(){
+	    marker = new google.maps.Marker({
+	      map: this.googleMap,
+	      position: this.googleMap.center
+	    })
+	  };
+	
+	  this.addClickListener = function(){
+	    google.maps.event.addListener
+	  }
 	
 	
 	}
