@@ -1,3 +1,4 @@
+
 var Map = require("./src/models/map");
 var map;
 
@@ -8,6 +9,7 @@ var handleSetHomeButton = function(){
   var welcomeDiv = document.getElementById("welcome_page");
   welcomeDiv.style.display = "none";
 };
+
 
 var app = function(){
   var container = document.getElementById("welcome_map");
@@ -32,7 +34,7 @@ var app = function(){
       date: date,
       title: title
     }
-    console.log(diaryInput);
+    // DiaryQuery.send(diaryInput);
   };
 
 

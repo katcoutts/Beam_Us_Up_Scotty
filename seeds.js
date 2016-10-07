@@ -1,3 +1,5 @@
+// db.dropDatabase();
+
 use beam_us_up;
 
 db.diary.insert([
@@ -15,5 +17,8 @@ db.diary.insert([
 =======
 );
 
+<<<<<<< HEAD
+=======
 // db.dropDatabase();
 >>>>>>> 3dbe688d31529ec98a533bb5799725e2a7942c55
+>>>>>>> 66adc9393613d976de407980f3e76645dc855020
