@@ -7,6 +7,7 @@ var app = function(){
   var map = new Map( container, centre, zoom );
 
   map.createMarker();
+  map.addClickListener();
 
   var submitButton = document.getElementById('submitDiary');
 
