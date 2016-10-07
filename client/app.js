@@ -1,4 +1,5 @@
-var Map = require("./src/models/map");
+var Map = require('./src/models/map');
+// var DiaryQuery = require('../db/diaryQuery');
 
 var app = function(){
   var container = document.getElementById("welcome_map");
@@ -19,7 +20,7 @@ var app = function(){
       date: date,
       title: title
     }
-    console.log(diaryInput);
+    // DiaryQuery.send(diaryInput);
   };
 
 }

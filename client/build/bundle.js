@@ -45,6 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var Map = __webpack_require__(1);
+	// var DiaryQuery = require('../db/diaryQuery');
 
 	var app = function(){
 	  var container = document.getElementById("welcome_map");
@@ -65,7 +66,7 @@
 	      date: date,
 	      title: title
 	    }
-	    console.log(diaryInput);
+	    // DiaryQuery.send(diaryInput);
 	  };
 
 	}
