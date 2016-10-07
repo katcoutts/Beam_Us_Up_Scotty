@@ -40,11 +40,13 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	
+	var Ajax = __webpack_require__(151);
+
 	var Map = __webpack_require__(1);
 	var map;
 
@@ -54,6 +56,30 @@
 	  welcomeDiv.style.display = "none";
 	};
 
+	var handleSubmitButton = function(event){
+	  event.preventDefault();
+	  var ajax = new Ajax();
+	  var text = document.getElementById('diaryText').value;
+	  var date = document.getElementById('date').value;
+	  var title = document.getElementById('title').value;
+	  var diaryInput = {
+	    entry: {
+	      text: text,
+	      date: date,
+	      title: title 
+	    }
+	  }
+	  // var postRequest = function(){
+	  //     if (this.status != 200) console.log("not 200");
+	  //     // var jsonString = this.responseText;
+	  //     // var results = JSON.parse(jsonString);
+	  //     // var diary = self.populateDiary(results);
+	  //     console.log("hello")
+	  //     // callback(diary);
+	  // };
+	  console.log("before makePostRequest in app.js");
+	  ajax.makePostRequest('/api/diary', diaryInput )
+	};
 
 	var app = function(){
 	  var container = document.getElementById("welcome_map");
@@ -67,19 +93,10 @@
 	  map.createMarker();
 	  map.addClickListener();
 
-	  var submitButton = document.getElementById('submitDiary');
+	  // var submitButton = document.getElementById('submitDiary');
 
-	  submitButton.onclick = function(){
-	    var text = document.getElementById('diaryText').value;
-	    var date = document.getElementById('date').value;
-	    var title = document.getElementById('title').value;
-	    var diaryInput = {
-	      text: text,
-	      date: date,
-	      title: title
-	    }
-	    // DiaryQuery.send(diaryInput);
-	  };
+	  var form = document.querySelector('#diary_form');
+	  form.onsubmit = handleSubmitButton;
 
 
 	}
@@ -87,7 +104,8 @@
 	window.onload = app;
 
 /***/ },
-/* 1 */
+
+/***/ 1:
 /***/ function(module, exports) {
 
 	var Map =  function( container, centre, zoom ){
@@ -125,5 +143,41 @@
 
 	module.exports = Map;
 
+/***/ },
+
+/***/ 151:
+/***/ function(module, exports) {
+
+	var Ajax= function(){}
+
+	Ajax.prototype = {
+	  makeGetRequest: function(url, callback){
+	    var request = new XMLHttpRequest();
+	    request.open('GET', url);
+	    request.onload = callback;
+	    request.send();
+	  },
+
+	  makePostRequest: function(url, diaryInput){
+	    var request = new XMLHttpRequest();
+	    console.log(diaryInput);
+	    request.open('POST', url);
+	    request.setRequestHeader('Content-Type', 'application/json');
+	    console.log("diaryInput2", diaryInput)
+	    request.onload = function(){
+	      // if(Ajax.request = 200){
+	      //   console.log("success");
+	      // }
+	      console.log("Make post request on load call back");
+	    };
+
+	    request.send(JSON.stringify(diaryInput));
+	  }
+
+	}
+
+	module.exports = Ajax;
+
 /***/ }
-/******/ ]);
+
+/******/ });
