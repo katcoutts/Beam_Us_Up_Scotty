@@ -7,6 +7,21 @@ var app = function(){
   var map = new Map( container, centre, zoom );
 
   map.createMarker();
+
+  var submitButton = document.getElementById('submitDiary');
+
+  submitButton.onclick = function(){
+    var text = document.getElementById('diaryText').value;
+    var date = document.getElementById('date').value;
+    var title = document.getElementById('title').value;
+    var diaryInput = {
+      text: text,
+      date: date,
+      title: title
+    }
+    console.log(diaryInput);
+  };
+
 }
 
 window.onload = app;
