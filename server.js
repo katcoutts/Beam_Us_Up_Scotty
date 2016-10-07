@@ -4,14 +4,14 @@ var path = require('path');
 
 var bodyParser = require('body-parser');
 
-// var DiaryApi = require('./api/diaryApi');
+var DiaryApi = require('./api/diaryApi');
 
 // public declaration 
 app.use(express.static('./client/build'));
 app.use(bodyParser.json());
 
 app.listen(3000, function(){
-  // new DiaryApi(app);
+  new DiaryApi(app);
   console.log('app running on port' + this.address().port);
 });
 
