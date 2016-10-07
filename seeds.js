@@ -6,4 +6,8 @@ db.diary.insert([
     date: "01.09.16",
     text: "Fixing stuff. Flying about."
   }]
+
 );
+
+// db.dropDatabase();
+
