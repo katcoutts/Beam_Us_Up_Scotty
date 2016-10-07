@@ -5,5 +5,7 @@ var Map =  function( container, centre, zoom ){
     zoom: zoom
   });
 
-  
+
 }
+
+module.exports = Map;
