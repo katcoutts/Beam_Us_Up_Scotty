@@ -15,7 +15,17 @@ var Map =  function( container, centre, zoom ){
   };
 
   this.addClickListener = function(){
-    google.maps.event.addListener
+    google.maps.event.addListener(this.googleMap, "click", function( event ){
+      var newCoords = {
+        lat: event.latLng.lat(),
+        lng: event.latLng.lng()
+      }
+      marker.setPosition(newCoords);
+    })
+  };
+
+  this.markerPosition = function(){
+    return marker.position;
   }
 
 
