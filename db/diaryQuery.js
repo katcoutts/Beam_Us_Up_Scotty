@@ -22,7 +22,9 @@ DiaryQuery.prototype = {
       ]
     )
   })
-  }
+  },
+
+
 }
 
 module.exports = DiaryQuery;

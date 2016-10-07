@@ -1,12 +1,13 @@
 var DiaryEntry = require('./diary_entry');
-
+var Ajax = require('./ajax');
 
 var Diary = function(){}
 
 Diary.prototype = {
   all: function(callback){
+    var ajax = new Ajax();
     var self = this;
-    this.makeRequest('http:/localhost:3000/api/diary', function(){
+    ajax.makeGetRequest('http:/localhost:3000/api/diary', function(){
       if (this.status != 200) return;
       var jsonString = this.responseText;
       var results = JSON.parse(jsonString);
@@ -23,13 +24,6 @@ Diary.prototype = {
       diary.push(diaryEntry);
     }
     return diary;
-  }, 
-
-  makeRequest: function(url, callback){
-    var request = new XMLHttpRequest();
-    request.open('GET', url);
-    request.onload = callback;
-    request.send();
   }
 }
 

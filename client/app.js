@@ -1,3 +1,4 @@
+var Ajax = require('./src/models/ajax');
 
 var Map = require("./src/models/map");
 var map;
@@ -10,6 +11,30 @@ var handleSetHomeButton = function(){
   welcomeDiv.style.display = "none";
 };
 
+var handleSubmitButton = function(event){
+  event.preventDefault();
+  var ajax = new Ajax();
+  var text = document.getElementById('diaryText').value;
+  var date = document.getElementById('date').value;
+  var title = document.getElementById('title').value;
+  var diaryInput = {
+    entry: {
+      text: text,
+      date: date,
+      title: title 
+    }
+  }
+  // var postRequest = function(){
+  //     if (this.status != 200) console.log("not 200");
+  //     // var jsonString = this.responseText;
+  //     // var results = JSON.parse(jsonString);
+  //     // var diary = self.populateDiary(results);
+  //     console.log("hello")
+  //     // callback(diary);
+  // };
+  console.log("before makePostRequest in app.js");
+  ajax.makePostRequest('/api/diary', diaryInput )
+};
 
 var app = function(){
   var container = document.getElementById("welcome_map");
@@ -23,19 +48,10 @@ var app = function(){
   map.createMarker();
   map.addClickListener();
 
-  var submitButton = document.getElementById('submitDiary');
+  // var submitButton = document.getElementById('submitDiary');
 
-  submitButton.onclick = function(){
-    var text = document.getElementById('diaryText').value;
-    var date = document.getElementById('date').value;
-    var title = document.getElementById('title').value;
-    var diaryInput = {
-      text: text,
-      date: date,
-      title: title
-    }
-    // DiaryQuery.send(diaryInput);
-  };
+  var form = document.querySelector('#diary_form');
+  form.onsubmit = handleSubmitButton;
 
 
 
