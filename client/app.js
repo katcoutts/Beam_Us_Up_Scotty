@@ -3,6 +3,7 @@ var map;
 
 var handleSetHomeButton = function(){
   console.log(map.markerPosition());
+  map.geocodeLatLng();
   localStorage.setItem("latlng", map.markerPosition());
   var welcomeDiv = document.getElementById("welcome_page");
   welcomeDiv.style.display = "none";

@@ -26,6 +26,13 @@ var Map =  function( container, centre, zoom ){
 
   this.markerPosition = function(){
     return marker.position;
+  };
+
+  this.geocodeLatLng = function(){
+    var geocoder = new google.maps.Geocoder;
+    geocoder.geocode({"location": marker.position}, function( results, status ){
+      console.log(results);
+    })
   }
 
 
