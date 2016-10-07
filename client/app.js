@@ -8,7 +8,6 @@ var app = function(){
 
   map.createMarker();
 
-
   var submitButton = document.getElementById('submitDiary');
 
   submitButton.onclick = function(){
