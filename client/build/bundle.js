@@ -44,16 +44,28 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	
 	var Map = __webpack_require__(1);
-	// var DiaryQuery = require('../db/diaryQuery');
+	var map;
+
+	var handleSetHomeButton = function(){
+	  console.log(map.markerPosition());
+	  var welcomeDiv = document.getElementById("welcome_page");
+	  welcomeDiv.style.display = "none";
+	};
+
 
 	var app = function(){
 	  var container = document.getElementById("welcome_map");
 	  var centre = {lat:0, lng:0};
 	  var zoom = 2;
-	  var map = new Map( container, centre, zoom );
+	  map = new Map( container, centre, zoom );
+
+	  var setHomeButton = document.getElementById("set_home");
+	  setHomeButton.onclick = handleSetHomeButton;
 
 	  map.createMarker();
+	  map.addClickListener();
 
 	  var submitButton = document.getElementById('submitDiary');
 
@@ -68,6 +80,7 @@
 	    }
 	    // DiaryQuery.send(diaryInput);
 	  };
+
 
 	}
 
@@ -94,7 +107,17 @@
 	  };
 
 	  this.addClickListener = function(){
-	    google.maps.event.addListener
+	    google.maps.event.addListener(this.googleMap, "click", function( event ){
+	      var newCoords = {
+	        lat: event.latLng.lat(),
+	        lng: event.latLng.lng()
+	      }
+	      marker.setPosition(newCoords);
+	    })
+	  };
+
+	  this.markerPosition = function(){
+	    return marker.position;
 	  }
 
 
