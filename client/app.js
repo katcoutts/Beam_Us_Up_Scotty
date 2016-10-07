@@ -3,6 +3,7 @@ var map;
 
 var handleSetHomeButton = function(){
   console.log(map.markerPosition());
+  localStorage.setItem("latlng", map.markerPosition());
   var welcomeDiv = document.getElementById("welcome_page");
   welcomeDiv.style.display = "none";
 };
@@ -32,6 +33,7 @@ var app = function(){
     }
     console.log(diaryInput);
   };
+
 
 
 }
