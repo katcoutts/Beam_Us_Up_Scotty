@@ -53,6 +53,9 @@ var app = function(){
   var form = document.querySelector('#diary_form');
   form.onsubmit = handleSubmitButton;
 
+// KAT'S STUFF FOR CHECKING OUT DIV STYLING
+  // var mapButton = document.query
+
 
 
 }

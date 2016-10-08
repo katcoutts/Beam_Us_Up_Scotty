@@ -2,21 +2,32 @@
 <html>
 <head>
   <title>Beam me up Scotty</title>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="main.css">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
   <script type="text/javascript" src="bundle.js"></script>
 </head>
 <body>
-  <h1>Homepage</h1>
-  <div id="welcome_page">
+  <h1>Welcome to AIMEE</h1>
+
+  <!-- THIS IS THE LANDING PAGE WHICH IS FOUR BUTTONS TO SELECT FROM -->
+  <div id="landing_page">
+    <button id="map_page_entry" class="landing_button">Check out home</button>
+    <button id="iss_page_entry" class="landing_button">Where are we now?</button>
+    <button id="add_diary_entry" class="landing_button">Add diary entry</button>
+    <button id="diary_entry" class="landing_button">View diary</button>
+  </div>
+
+  <!-- THIS IS THE PAGE WHERE YOU GO TO PICK YOUR HOME LOCATION -->
+  <div id="select_home_page"  style="display:none">
     <div id="welcome_map">
       
     </div>
     <button id="set_home">Set Home</button>
   </div>
 
-  <div>
-    <div>
+  <!-- THIS IS THE PAGE WHERE YOU ADD A DIARY ENTRY -->
+    <div id="diary_entry_form" style="display:none">
       <form id="diary_form">
         <input type="text" id="title">
         <textarea id="diaryText"></textarea>
@@ -24,6 +35,6 @@
         <input type="submit" id="submitDiary" />
       </form>
     </div>
-  </div>
+  
 </body>
 </html>

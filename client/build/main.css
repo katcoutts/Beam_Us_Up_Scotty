@@ -1,4 +1,51 @@
+body{
+  font-family: 'Orbitron', sans-serif;
+  background-color: black;
+  background-image: url("http://wallpapercave.com/wp/IpGSDFe.jpg");
+}
+
+h1{
+  color: red;
+  font-size: 4em;
+  text-align: center;
+}
+
+#landing_page{
+  margin: auto;
+  width: 80%;
+}
+
 #welcome_map {
   height: 500px;
   width: 100%;
+}
+
+.landing_button{
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+width: 420px;
+height: 200px;
+/*padding:30px 35px;*/ /*add some padding to the inside of the button*/
+background:#35b128; /*the colour of the button*/
+border:1px solid #33842a; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+/*give the button a drop shadow*/
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+font-size:3.0em;
+font-family: 'Orbitron', sans-serif;
+margin: 20px;
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+.landing_button:hover, .landing_button:focus{
+background-color :#399630; /*make the background a little darker*/
+/*reduce the drop shadow size to give a pushed button effect*/
+-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+box-shadow: 0 0 1px rgba(0,0,0, .75);
 }
