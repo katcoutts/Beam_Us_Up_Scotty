@@ -98,6 +98,17 @@ var app = function(){
     }
   }
 
+  var diaryButton = document.querySelector('#diary_entry');
+  diaryButton.onclick=function(){
+    var header = document.querySelector('#header');
+    header.style.display='none';
+    var landingPage = document.querySelector('#landing_page');
+    landingPage.style.display='none';
+    var diaryViewPage = document.querySelector('#view_diary_page');
+    diaryViewPage.style.display ='block';
+    new DiaryUI();
+  }
+
 
 
 }

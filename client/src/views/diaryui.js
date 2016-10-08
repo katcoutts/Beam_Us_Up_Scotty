@@ -8,14 +8,14 @@ var DiaryUI = function() {
 }
 
 DiaryUI.prototype = {
-  createText: function(text, label) {
+  createText: function(text) {
     var p = document.createElement("p");
-    p.innerText = label+text;
+    p.innerText = text;
     return p;
   },
 
-  appendText: function(element, text, label) {
-    var pTag = this.createText(text, label);
+  appendText: function(element, text) {
+    var pTag = this.createText(text);
     element.appendChild(pTag);
   },
 
@@ -24,9 +24,9 @@ DiaryUI.prototype = {
 
     for(var result of results) {
       var li = document.createElement("li");
-      this.appendText(li, result.title, "Title: ");
-      this.appendText(li, result.text, "Entry: ");
-      this.appendText(li, result.date, "Date: ");
+      this.appendText(li, result.title);
+      this.appendText(li, result.text);
+      this.appendText(li, result.date);
       
       container.appendChild(li);
     }

@@ -112,8 +112,30 @@ form textarea{
 }
 
 #container_for_diary_entries{
-  background-color: white;
+  background-color: #f0f5f5;
   color: black;
-  height: 800px;
-  width: 600px;
+  height: 600px;
+  width: 1000px;
+  overflow-y: scroll;
+  overflow: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-left: 50px;
+}
+
+ul{
+  margin-top: 30px;
+  font-size: 1.8em;
+  list-style-type: none;
+  padding-right: 40px;
+}
+
+li{
+  margin-top:30px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+ul:first-child{
+  font-style: bold;
 }
