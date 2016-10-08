@@ -37,16 +37,16 @@ var handleSubmitButton = function(event){
 };
 
 var app = function(){
-  var container = document.getElementById("welcome_map");
-  var centre = {lat:0, lng:0};
-  var zoom = 2;
-  map = new Map( container, centre, zoom );
+  // var container = document.getElementById("welcome_map");
+  // var centre = {lat:0, lng:0};
+  // var zoom = 2;
+  // map = new Map( container, centre, zoom );
 
   var setHomeButton = document.getElementById("set_home");
   setHomeButton.onclick = handleSetHomeButton;
 
-  map.createMarker();
-  map.addClickListener();
+  // map.createMarker();
+  // map.addClickListener();
 
   // var submitButton = document.getElementById('submitDiary');
 
@@ -54,7 +54,19 @@ var app = function(){
   form.onsubmit = handleSubmitButton;
 
 // KAT'S STUFF FOR CHECKING OUT DIV STYLING
-  // var mapButton = document.query
+  var mapButton = document.querySelector('#map_page_entry');
+  mapButton.onclick = function(){
+    var landingPage = document.querySelector('#landing_page');
+    landingPage.style.display='none';
+    var mapPage = document.querySelector('#select_home_page');
+    mapPage.style.display='block';
+    var container = document.getElementById("welcome_map");
+    var centre = {lat:0, lng:0};
+    var zoom = 2;
+    map = new Map( container, centre, zoom );
+    map.createMarker();
+    map.addClickListener();
+  }
 
 
 
