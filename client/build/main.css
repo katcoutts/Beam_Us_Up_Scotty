@@ -20,7 +20,7 @@ h2{
   width: 80%;
 }
 
-#welcome_map {
+#welcome_map, #iss_location_map {
   height: 400px;
   width: 90%;
   margin: auto;
