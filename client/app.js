@@ -9,12 +9,14 @@ var map;
 
 var handleSetHomeButton = function(){
   console.log(map.markerPosition());
-  map.geocodeLatLng();
+  // var array = map.geocodeLatLng();
+  var country = localStorage.getItem("address array");
+  console.log(country);
   localStorage.setItem("latlng", map.markerPosition());
   var welcomeDiv = document.getElementById("select_home_page");
   welcomeDiv.style.display = "none";
   // nytApi.makeRequest();
-  flickrApi.makeRequest()
+  flickrApi.makeRequest(country);
 };
 
 var handleSubmitButton = function(event){
@@ -48,8 +50,8 @@ var app = function(){
   // var zoom = 2;
   // map = new Map( container, centre, zoom );
 
-  var setHomeButton = document.getElementById("set_home");
-  setHomeButton.onclick = handleSetHomeButton;
+  // var setHomeButton = document.getElementById("set_home");
+  // setHomeButton.onclick = handleSetHomeButton;
 
   // map.createMarker();
   // map.addClickListener();
@@ -82,6 +84,7 @@ var app = function(){
       homeInfoPage.style.display='block';
       var header = document.querySelector('#header');
       header.innerHTML = "News From Home";
+      handleSetHomeButton();
     }
   }
 

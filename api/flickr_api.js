@@ -1,12 +1,12 @@
-var FlickrApi = function(){
-  this.url = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=6de6eb699bf1c7099efd3d1a62d98392&tags=cat&format=json&per_page=5&nojsoncallback=1";
+var FlickrApi = function(country){
 }
 
 FlickrApi.prototype = {
-  makeRequest: function(){
+  makeRequest: function( country ){
+    var url = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=6de6eb699bf1c7099efd3d1a62d98392&tags="+country+"&format=json&per_page=5&nojsoncallback=1";
     var self = this;
     var request = new XMLHttpRequest();
-    request.open("GET", this.url);
+    request.open("GET", url);
     request.onload = function(){
       if(this.status !== 200) {
         console.log(this.status);
