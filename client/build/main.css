@@ -1,4 +1,112 @@
+body{
+  font-family: 'Orbitron', sans-serif;
+  background-color: black;
+  background-image: url("http://wallpapercave.com/wp/IpGSDFe.jpg");
+}
+
+h1{
+  color: red;
+  font-size: 4em;
+  text-align: center;
+}
+
+h2{
+  color: silver;
+  font-size: 2em;
+}
+
+#landing_page{
+  margin: auto;
+  width: 80%;
+}
+
 #welcome_map {
-  height: 500px;
-  width: 100%;
+  height: 400px;
+  width: 90%;
+  margin: auto;
+}
+
+button, form input[type=submit]{
+  cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+  width: 420px;
+  height: 200px;
+  /*padding:30px 35px;*/ /*add some padding to the inside of the button*/
+  background:#35b128; /*the colour of the button*/
+  border:1px solid #33842a; /*required or the default border for the browser will appear*/
+  /*give the button curved corners, alter the size as required*/
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  /*give the button a drop shadow*/
+  -webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+  -moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+  box-shadow: 0 0 4px rgba(0,0,0, .75);
+  /*style the text*/
+  color:#f3f3f3;
+  font-size:3.0em;
+  font-family: 'Orbitron', sans-serif;
+  margin: 20px;
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+button:hover, button:focus, form input[type=submit]:hover, form input[type=submit]:focus{
+  background-color :#399630; /*make the background a little darker*/
+  /*reduce the drop shadow size to give a pushed button effect*/
+  -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+  -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+  box-shadow: 0 0 1px rgba(0,0,0, .75);
+  text-decoration: none;
+  color: #aaf;
+  text-shadow: none;
+  -webkit-transition: 500ms linear 0s;
+  -moz-transition: 500ms linear 0s;
+  -o-transition: 500ms linear 0s;
+  transition: 500ms linear 0s;
+  outline: 0 none;
+  color: #fff;
+  text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
+}
+
+#set_home_page{
+  margin: auto;
+  width: 90%;
+}
+
+#diary_entry_form{
+  width: 90%;
+  margin: auto;
+}
+
+#set_home{
+  width: 200px;
+  height: 150px;
+  margin: auto;
+}
+
+#submitDiary{
+  display: inline-block;
+  margin-top: 40px;
+  width: 150px;
+  height: 50px;
+  background-color: green;
+  font-size: 1.5em;
+  font-family: 'Orbitron', sans-serif;
+}
+
+form input[type=text]{
+  width: 400px;
+  display: block;
+  height: 50px;
+  font-size: 2em
+}
+
+form textarea{
+  width: 600px;
+  height: 250px;
+  font-size: 2em;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.page_header{
+  text-align: left;
 }
