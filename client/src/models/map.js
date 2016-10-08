@@ -14,6 +14,10 @@ var Map =  function( container, centre, zoom ){
     })
   };
 
+  // this.addFancyMarker = function(image){
+  //   marker.setIcon("ISSimage.png")
+  // };
+
   this.addClickListener = function(){
     google.maps.event.addListener(this.googleMap, "click", function( event ){
       var newCoords = {
