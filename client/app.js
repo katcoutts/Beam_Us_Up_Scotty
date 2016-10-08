@@ -68,6 +68,14 @@ var app = function(){
     map.addClickListener();
   }
 
+  var diaryEntryButton = document.querySelector('#add_diary_entry');
+  diaryEntryButton.onclick = function(){
+    var landingPage = document.querySelector('#landing_page');
+    landingPage.style.display='none';
+    var diaryEntryPage = document.querySelector('#diary_entry_form');
+    diaryEntryPage.style.display='block';
+  }
+
 
 
 }
