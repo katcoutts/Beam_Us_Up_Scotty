@@ -2,6 +2,8 @@ var Ajax = require('./src/models/ajax');
 
 var NYTApi = require('../api/new_york_times_api');
 var nytApi = new NYTApi();
+var FlickrApi = require('../api/flickr_api');
+var flickrApi = new FlickrApi();
 
 var DiaryUI = require('./src/views/diaryui');
 var IssLocationApi = require('./../api/issLocationApi');
@@ -12,12 +14,20 @@ var map;
 
 var handleSetHomeButton = function(){
   console.log(map.markerPosition());
-  map.geocodeLatLng();
+  // var array = map.geocodeLatLng();
+  var country = localStorage.getItem("country");
+  console.log(country);
   localStorage.setItem("latlng", map.markerPosition());
   var welcomeDiv = document.getElementById("select_home_page");
   welcomeDiv.style.display = "none";
-  var country = localStorage.getItem("region and country")
+
+  var nytrequest = localStorage.getItem("region and country")
+
   nytApi.makeRequest(country);
+
+  // nytApi.makeRequest();
+  flickrApi.makeRequest(country);
+
 };
 
 var handleSubmitButton = function(event){
