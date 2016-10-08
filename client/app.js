@@ -7,7 +7,7 @@ var handleSetHomeButton = function(){
   console.log(map.markerPosition());
   map.geocodeLatLng();
   localStorage.setItem("latlng", map.markerPosition());
-  var welcomeDiv = document.getElementById("welcome_page");
+  var welcomeDiv = document.getElementById("select_home_page");
   welcomeDiv.style.display = "none";
 };
 
@@ -56,6 +56,8 @@ var app = function(){
 // KAT'S STUFF FOR CHECKING OUT DIV STYLING
   var mapButton = document.querySelector('#map_page_entry');
   mapButton.onclick = function(){
+    var header = document.querySelector('#header');
+    header.innerHTML = "Set Home Location";
     var landingPage = document.querySelector('#landing_page');
     landingPage.style.display='none';
     var mapPage = document.querySelector('#select_home_page');

@@ -8,7 +8,7 @@
   <script type="text/javascript" src="bundle.js"></script>
 </head>
 <body>
-  <h1>Welcome to AIMEE</h1>
+  <h1 id="header">Welcome to AIMEE</h1>
 
   <!-- THIS IS THE LANDING PAGE WHICH IS FOUR BUTTONS TO SELECT FROM -->
   <div id="landing_page">
@@ -27,6 +27,15 @@
     <button id="set_home">Set Home</button>
   </div>
 
+  <!-- THIS IS THE PAGE WHERE IT DISPLAYS ALL YOUR INFO FROM HOME -->
+  <div id="home_info_page" style="display: none">
+  <div id="weather_info">
+  </div>
+  <div id="news_info">
+  </div>
+  </div>
+
+
   <!-- THIS IS THE PAGE WHERE YOU ADD A DIARY ENTRY -->
     <div id="diary_entry_form" style="display:none">
       <form id="diary_form">
@@ -35,6 +44,13 @@
         <input type="text" id="date" placeholder="Date:">
         <input type="submit" id="submitDiary" />
       </form>
+    </div>
+
+
+  <!-- VIEW DIARY DIV -->
+    <div id="view_diary_page" style="display:none">
+      <div id="container_for_diary_entries">
+      </div>
     </div>
   
 </body>
