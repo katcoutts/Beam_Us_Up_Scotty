@@ -112,18 +112,18 @@ var app = function(){
 
   var issLocationButton = document.querySelector('#iss_page_entry');
   issLocationButton.onclick = function(){
+    var container = document.getElementById("iss_location_map");
+    var centre = {lat:0, lng:0};
+    var zoom = 2;
+    map = new Map( container, centre, zoom );
     var issLocationApi = new IssLocationApi();
-    var issLocation = issLocationApi.makeRequest();
+    var issLocation = issLocationApi.makeRequest(map);
     var header = document.querySelector('#header');
     header.style.display='none';
     var landingPage = document.querySelector('#landing_page');
     landingPage.style.display='none';
     var issLocationPage = document.querySelector('#iss_location_page');
     issLocationPage.style.display ='block';
-    var container = document.getElementById("iss_location_map");
-    var centre = {lat:0, lng:0};
-    var zoom = 2;
-    map = new Map( container, centre, zoom );
     map.createMarker();
   }
 

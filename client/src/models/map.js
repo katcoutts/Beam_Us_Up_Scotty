@@ -33,6 +33,10 @@ var Map =  function( container, centre, zoom ){
     geocoder.geocode({"location": marker.position}, function( results, status ){
       console.log(results);
     })
+  };
+
+  this.setMarker = function(coords){
+    marker.setPosition(coords);
   }
 
 
