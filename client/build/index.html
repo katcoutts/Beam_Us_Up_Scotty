@@ -20,6 +20,7 @@
 
   <!-- THIS IS THE PAGE WHERE YOU GO TO PICK YOUR HOME LOCATION -->
   <div id="select_home_page"  style="display:none">
+    <h1>Set Home Location</h1>
     <h2>Point to home:</h2>
     <div id="welcome_map">
       
@@ -29,15 +30,17 @@
 
   <!-- THIS IS THE PAGE WHERE IT DISPLAYS ALL YOUR INFO FROM HOME -->
   <div id="home_info_page" style="display: none">
-  <div id="weather_info">
-  </div>
-  <div id="news_info">
-  </div>
+    <h1 class="page_header">News from home</h1>
+    <div id="weather_info">
+    </div>
+    <div id="news_info">
+    </div>
   </div>
 
 
   <!-- THIS IS THE PAGE WHERE YOU ADD A DIARY ENTRY -->
     <div id="diary_entry_form" style="display:none">
+      <h1 class="page_header">Add to diary:</h1>
       <form id="diary_form">
         <input type="text" id="title" placeholder="Title:">
         <textarea id="diaryText" placeholder="Text:"></textarea>
@@ -49,6 +52,7 @@
 
   <!-- VIEW DIARY DIV -->
     <div id="view_diary_page" style="display:none">
+      <h1 class="page_header">Diary</h1>
       <div id="container_for_diary_entries">
       </div>
     </div>
