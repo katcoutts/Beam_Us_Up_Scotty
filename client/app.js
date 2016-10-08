@@ -114,6 +114,7 @@ var app = function(){
       var diaryViewPage = document.querySelector('#view_diary_page');
       diaryViewPage.style.display ='block';
       new DiaryUI();
+      location.reload();
     }
   }
 
