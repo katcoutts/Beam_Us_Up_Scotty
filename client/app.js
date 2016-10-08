@@ -1,6 +1,8 @@
 var Ajax = require('./src/models/ajax');
 var NYTApi = require('../api/new_york_times_api');
 var nytApi = new NYTApi();
+var FlickrApi = require('../api/flickr_api');
+var flickrApi = new FlickrApi();
 
 var Map = require("./src/models/map");
 var map;
@@ -11,7 +13,8 @@ var handleSetHomeButton = function(){
   localStorage.setItem("latlng", map.markerPosition());
   var welcomeDiv = document.getElementById("welcome_page");
   welcomeDiv.style.display = "none";
-  nytApi.makeRequest();
+  // nytApi.makeRequest();
+  flickrApi.makeRequest()
 };
 
 var handleSubmitButton = function(event){
