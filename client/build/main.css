@@ -111,13 +111,7 @@ form textarea{
   text-align: left;
 }
 
-<<<<<<< HEAD
-#news_info{
-  width: 30%;
-  height:50%;
-  color: white;
-}
-=======
+
 #container_for_diary_entries{
   background-color: silver;
   color: black;
@@ -166,4 +160,24 @@ p:nth-child(2){
   border-bottom-color: black;
   padding-bottom: 10px;
 }
->>>>>>> 4bbc97036d8e725bff386cf1ca6775dac6135a39
+/*
+#home_info_page{
+  display:flex;
+}
+*/
+#flickrimages{
+  display: inline-flex;
+  margin-left:19%;
+  width: 40%;
+  height:600px;
+  overflow-y: scroll;
+  overflow: auto;
+}
+
+#news_info{
+  display: inline-flex;
+  width: 40%;
+  height:600px;
+  overflow-y: scroll;
+  overflow: auto;
+}
