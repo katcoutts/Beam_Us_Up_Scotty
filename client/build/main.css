@@ -112,7 +112,7 @@ form textarea{
 }
 
 #container_for_diary_entries{
-  background-color: #f0f5f5;
+  background-color: silver;
   color: black;
   height: 600px;
   width: 1000px;
@@ -124,18 +124,38 @@ form textarea{
 }
 
 ul{
+  background-color: silver;
   margin-top: 30px;
-  font-size: 1.8em;
   list-style-type: none;
   padding-right: 40px;
+  font-size: 1.4em;
 }
 
 li{
+  background-color: whitesmoke;
   margin-top:30px;
   border-style: solid;
   border-width: 1px;
 }
 
-ul:first-child{
+p{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+p:first-child{
   font-style: bold;
+  color: red;
+  font-size: 1.2em;
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  padding-bottom: 5px;
+}
+
+p:nth-child(2){
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  padding-bottom: 10px;
 }
