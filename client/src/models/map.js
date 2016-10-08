@@ -14,6 +14,10 @@ var Map =  function( container, centre, zoom ){
     })
   };
 
+  // this.addFancyMarker = function(image){
+  //   marker.setIcon("ISSimage.png")
+  // };
+
   this.addClickListener = function(){
     var self = this;
     google.maps.event.addListener(this.googleMap, "click", function( event ){
@@ -38,6 +42,10 @@ var Map =  function( container, centre, zoom ){
       localStorage.setItem("region and country", results[results.length -2 ].formatted_address);
       console.log(localStorage.getItem("country"));
     })
+  };
+
+  this.setMarker = function(coords){
+    marker.setPosition(coords);
   }
 
 

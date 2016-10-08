@@ -1,6 +1,11 @@
 var Ajax = require('./src/models/ajax');
+
 var NYTApi = require('../api/new_york_times_api');
 var nytApi = new NYTApi();
+
+var DiaryUI = require('./src/views/diaryui');
+var IssLocationApi = require('./../api/issLocationApi');
+
 
 var Map = require("./src/models/map");
 var map;
@@ -98,9 +103,38 @@ var app = function(){
       diaryEntryPage.style.display='none';
       var diaryViewPage = document.querySelector('#view_diary_page');
       diaryViewPage.style.display ='block';
+      new DiaryUI();
     }
   }
 
+  var diaryButton = document.querySelector('#diary_entry');
+  diaryButton.onclick=function(){
+    var header = document.querySelector('#header');
+    header.style.display='none';
+    var landingPage = document.querySelector('#landing_page');
+    landingPage.style.display='none';
+    var diaryViewPage = document.querySelector('#view_diary_page');
+    diaryViewPage.style.display ='block';
+    new DiaryUI();
+  }
+
+  var issLocationButton = document.querySelector('#iss_page_entry');
+  issLocationButton.onclick = function(){
+    var container = document.getElementById("iss_location_map");
+    var centre = {lat:0, lng:0};
+    var zoom = 2;
+    map = new Map( container, centre, zoom );
+    var issLocationApi = new IssLocationApi();
+    var issLocation = issLocationApi.makeRequest(map);
+    var header = document.querySelector('#header');
+    header.style.display='none';
+    var landingPage = document.querySelector('#landing_page');
+    landingPage.style.display='none';
+    var issLocationPage = document.querySelector('#iss_location_page');
+    issLocationPage.style.display ='block';
+    map.createMarker();
+    // map.addFancyMarker();
+  }
 
 
 }
