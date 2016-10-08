@@ -1,5 +1,6 @@
 var Ajax = require('./src/models/ajax');
 var DiaryUI = require('./src/views/diaryui');
+var IssLocationApi = require('./../api/issLocationApi');
 
 var Map = require("./src/models/map");
 var map;
@@ -111,6 +112,8 @@ var app = function(){
 
   var issLocationButton = document.querySelector('#iss_page_entry');
   issLocationButton.onclick = function(){
+    var issLocationApi = new IssLocationApi();
+    var issLocation = issLocationApi.makeRequest();
     var header = document.querySelector('#header');
     header.style.display='none';
     var landingPage = document.querySelector('#landing_page');
