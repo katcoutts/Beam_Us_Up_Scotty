@@ -110,3 +110,10 @@ form textarea{
 .page_header{
   text-align: left;
 }
+
+#container_for_diary_entries{
+  background-color: white;
+  color: black;
+  height: 800px;
+  width: 600px;
+}

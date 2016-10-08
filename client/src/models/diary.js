@@ -7,7 +7,7 @@ Diary.prototype = {
   all: function(callback){
     var ajax = new Ajax();
     var self = this;
-    ajax.makeGetRequest('http:/localhost:3000/api/diary', function(){
+    ajax.makeGetRequest('http://localhost:3000/api/diary', function(){
       if (this.status != 200) return;
       var jsonString = this.responseText;
       var results = JSON.parse(jsonString);

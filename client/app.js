@@ -1,4 +1,5 @@
 var Ajax = require('./src/models/ajax');
+var DiaryUI = require('./src/views/diaryui');
 
 var Map = require("./src/models/map");
 var map;
@@ -93,6 +94,7 @@ var app = function(){
       diaryEntryPage.style.display='none';
       var diaryViewPage = document.querySelector('#view_diary_page');
       diaryViewPage.style.display ='block';
+      new DiaryUI();
     }
   }
 
