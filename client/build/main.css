@@ -110,3 +110,9 @@ form textarea{
 .page_header{
   text-align: left;
 }
+
+#news_info{
+  width: 30%;
+  height:50%;
+  color: white;
+}

@@ -15,12 +15,14 @@ var Map =  function( container, centre, zoom ){
   };
 
   this.addClickListener = function(){
+    var self = this;
     google.maps.event.addListener(this.googleMap, "click", function( event ){
       var newCoords = {
         lat: event.latLng.lat(),
         lng: event.latLng.lng()
       }
       marker.setPosition(newCoords);
+      self.geocodeLatLng()
     })
   };
 
@@ -32,6 +34,9 @@ var Map =  function( container, centre, zoom ){
     var geocoder = new google.maps.Geocoder;
     geocoder.geocode({"location": marker.position}, function( results, status ){
       console.log(results);
+      localStorage.setItem("country", results[results.length -1 ].formatted_address);
+      localStorage.setItem("region and country", results[results.length -2 ].formatted_address);
+      console.log(localStorage.getItem("country"));
     })
   }
 
