@@ -11,7 +11,7 @@ var handleSetHomeButton = function(){
   localStorage.setItem("latlng", map.markerPosition());
   var welcomeDiv = document.getElementById("select_home_page");
   welcomeDiv.style.display = "none";
-  var country = localStorage.getItem("country")
+  var country = localStorage.getItem("region and country")
   nytApi.makeRequest(country);
 };
 
