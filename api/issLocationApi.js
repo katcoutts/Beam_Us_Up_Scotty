@@ -18,6 +18,7 @@ IssLocationApi.prototype = {
       } 
       // var marker = new google.maps.Marker({map: map, position: newCoords, animation: google.maps.Animation.DROP, icon: image});
       map.setMarker(newCoords);
+
     }
     request.send();
   }
