@@ -5,8 +5,10 @@ var nytApi = new NYTApi();
 var FlickrApi = require('../api/flickr_api');
 var flickrApi = new FlickrApi();
 
+
+
 var DiaryUI = require('./src/views/diaryui');
-var IssLocationApi = require('./../api/issLocationApi');
+var IssLocationApi = require('../api/issLocationApi');
 
 
 var Map = require("./src/models/map");

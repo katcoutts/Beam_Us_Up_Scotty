@@ -1,3 +1,5 @@
+var IssPassOverApi = require('../../../api/issPassOverApi');
+
 var Map =  function( container, centre, zoom ){
 
   this.googleMap = new google.maps.Map( container, {
@@ -48,6 +50,8 @@ var Map =  function( container, centre, zoom ){
     google.maps.event.addListener(this.googleMap, 'click', function(event){
       var position = { lat: event.latLng.lat() , lng: event.latLng.lng()};
       this.addMarker(position);
+      var issPassOverApi = new IssPassOverApi();
+      var issPassOver = issPassOverApi.makeRequest(position);
       console.log(position);
     }.bind(this))
   }
