@@ -145,6 +145,7 @@ var app = function(){
     issLocationPage.style.display ='block';
     map.createMarker();
     map.addFancyMarker();
+    map.addClickEvent();
   }
 
 

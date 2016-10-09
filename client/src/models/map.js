@@ -34,6 +34,24 @@ var Map =  function( container, centre, zoom ){
     })
   };
 
+  this.addMarker = function(coordinates, note) {
+    var info_window = new google.maps.InfoWindow({content: note});
+      var marker2 = new google.maps.Marker({map: this.googleMap, position: coordinates, animation: google.maps.Animation.DROP});
+      if (note){
+        marker.addListener('click', function() {
+          info_window.open(map, marker);
+         });}
+      return marker2;
+  }
+
+  this.addClickEvent = function(){
+    google.maps.event.addListener(this.googleMap, 'click', function(event){
+      var position = { lat: event.latLng.lat() , lng: event.latLng.lng()};
+      this.addMarker(position);
+      console.log(position);
+    }.bind(this))
+  }
+
 
   this.markerPosition = function(){
     return marker.position;
