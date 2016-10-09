@@ -144,7 +144,7 @@ var app = function(){
     var issLocationPage = document.querySelector('#iss_location_page');
     issLocationPage.style.display ='block';
     map.createMarker();
-    // map.addFancyMarker();
+    map.addFancyMarker();
   }
 
 

@@ -14,9 +14,9 @@ var Map =  function( container, centre, zoom ){
     })
   };
 
-  // this.addFancyMarker = function(image){
-  //   marker.setIcon("ISSimage.png")
-  // };
+  this.addFancyMarker = function(image){
+    marker.setIcon("http://localhost:3000/public/ISSimage.png")
+  };
 
   this.addClickListener = function(){
     var self = this;
