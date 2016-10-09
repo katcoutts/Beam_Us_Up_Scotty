@@ -10,12 +10,13 @@ var Map =  function( container, centre, zoom ){
   this.createMarker = function(){
     marker = new google.maps.Marker({
       map: this.googleMap,
-      position: this.googleMap.center
+      position: this.googleMap.center,
+      animation: google.maps.Animation.DROP
     })
   };
 
   this.addFancyMarker = function(image){
-    marker.setIcon("http://localhost:3000/public/ISSimage.png")
+    marker.setIcon("http://localhost:3000/public/ISS-2011.png")
   };
 
   this.addClickListener = function(){
