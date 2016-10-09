@@ -19,6 +19,7 @@ var Map =  function( container, centre, zoom ){
     marker.setIcon("http://localhost:3000/public/ISS-2011.png")
   };
 
+
   this.addClickListener = function(){
     var self = this;
     google.maps.event.addListener(this.googleMap, "click", function( event ){
@@ -32,6 +33,7 @@ var Map =  function( container, centre, zoom ){
 
     })
   };
+
 
   this.markerPosition = function(){
     return marker.position;

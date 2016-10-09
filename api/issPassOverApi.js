@@ -18,6 +18,8 @@ IssPassOverApi.prototype = {
       
 
 // NEED TO THEN WORK OUT HOW TO TURN THE INFO INTO A PROPER DATE FOR THE NEXT PASSING TIME.
+// var myDate = new Date(1476009011000);
+// console.log(myDate);
     }
     request.send();
   }
