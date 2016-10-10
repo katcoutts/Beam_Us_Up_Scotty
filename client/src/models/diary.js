@@ -23,7 +23,8 @@ Diary.prototype = {
       var diaryEntry = new DiaryEntry(result);
       diary.push(diaryEntry);
     }
-    return diary;
+    diary1 = diary.reverse();
+    return diary1;
   }
 }
 
