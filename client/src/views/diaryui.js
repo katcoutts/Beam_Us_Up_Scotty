@@ -1,7 +1,7 @@
 var Diary = require('../models/diary');
+var diary = new Diary();
 
 var DiaryUI = function() {
-  var diary = new Diary();
   diary.all(function(result) {
     this.render(result);
   }.bind(this));
@@ -21,6 +21,7 @@ DiaryUI.prototype = {
 
   handleDelButton: function(){
     console.log(this.value);
+    diary.deleteDiaryEntry(this.value);
   },
 
   render: function(results) {
