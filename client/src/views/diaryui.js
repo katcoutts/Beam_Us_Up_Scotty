@@ -24,10 +24,13 @@ DiaryUI.prototype = {
 
     for(var result of results) {
       var li = document.createElement("li");
+      var delButton = document.createElement("button");
+      delButton.id = "diaryDelButton";
       this.appendText(li, result.title);
       this.appendText(li, result.text);
       this.appendText(li, result.date);
-      
+      delButton.innerText = "Delete";
+      li.appendChild(delButton);
       container.appendChild(li);
     }
   }
