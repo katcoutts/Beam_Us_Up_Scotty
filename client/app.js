@@ -150,6 +150,11 @@ var app = function(){
     map.addClickEvent();
   }
 
+  var homePageButton = document.querySelector('.homepage')
+  homePageButton.onclick = function(){
+    location.reload();
+  }
+
 
 }
 
