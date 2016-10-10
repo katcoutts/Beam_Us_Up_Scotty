@@ -141,11 +141,12 @@ form textarea{
 
 
 
-#container_for_diary_entries{
+#container_for_diary_entries, #container_for_saved_news{
   background-color: silver;
+  display: inline-block;
   color: black;
   height: 600px;
-  width: 1000px;
+  width: 500px;
   overflow-y: scroll;
   overflow: auto;
   padding-top: 40px;
@@ -159,7 +160,7 @@ ul{
   margin-top: 30px;
 }
 
-#container_for_diary_entries ul{
+#container_for_diary_entries ul, #container_for_saved_news ul{
   background-color: silver;
   margin-top: 30px;
   list-style-type: none;

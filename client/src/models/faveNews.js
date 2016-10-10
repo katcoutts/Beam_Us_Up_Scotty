@@ -12,8 +12,8 @@ FaveNews.prototype = {
       var jsonString = this.responseText;
       var results = JSON.parse(jsonString);
 
-      var diary = self.populateFaveNews(results);
-      callback(diary);
+      var faveNews = self.populateFaveNews(results);
+      callback(faveNews);
     });
   },
   populateFaveNews: function(results){

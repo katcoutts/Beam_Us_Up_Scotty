@@ -7,7 +7,7 @@ var NewsFaveUI = function() {
   }.bind(this));
 }
 
-DiaryUI.prototype = {
+NewsFaveUI.prototype = {
   createText: function(text) {
     var p = document.createElement("p");
     p.innerText = text;
@@ -26,21 +26,23 @@ DiaryUI.prototype = {
   },
 
   render: function(results) {
-    var container = document.getElementById("fave_news");
+    var container = document.getElementById("container_for_saved_news");
 
     for(var result of results) {
       var li = document.createElement("li");
-      var newsDelButton = document.createElement("button");
-      newsDelButton.id = "newsDelButton";
-      console.log(result);
-      newsDelButton.value = result.title;
-      newsDelButton.onclick = this.handleNewsDelButton
+      var ul = document.getElementById("saved_news")
+      // var newsDelButton = document.createElement("button");
+      // newsDelButton.id = "newsDelButton";
+      // console.log(result);
+      // newsDelButton.value = result.title;
+      // newsDelButton.onclick = this.handleNewsDelButton
       this.appendText(li, result.title);
       this.appendText(li, result.text);
       this.appendText(li, result.date);
-      newsDelButton.innerText = "Delete";
-      li.appendChild(newsDelButton);
-      container.appendChild(li);
+      // newsDelButton.innerText = "Delete";
+      // li.appendChild(newsDelButton);
+      ul.appendChild(li);
+      container.appendChild(ul);
     }
   }
 }

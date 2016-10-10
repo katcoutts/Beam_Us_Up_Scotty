@@ -7,6 +7,8 @@ var flickrApi = new FlickrApi();
 var DarkSky = require('../api/darkSkyApi');
 var darkSky = new DarkSky();
 
+var FaveNewsUI = require('./src/views/newsFaveUI');
+
 
 
 var DiaryUI = require('./src/views/diaryui');
@@ -132,6 +134,7 @@ var app = function(){
     var diaryViewPage = document.querySelector('#view_diary_page');
     diaryViewPage.style.display ='block';
     new DiaryUI();
+    new FaveNewsUI();
   }
 
   var issLocationButton = document.querySelector('#iss_page_entry');
