@@ -12,6 +12,7 @@ Ajax.prototype = {
     var request = new XMLHttpRequest();
     console.log(diaryInput);
     request.open('POST', url);
+    console.log(request);
     request.setRequestHeader('Content-Type', 'application/json');
     console.log("diaryInput2", diaryInput)
     request.onload = function(){
@@ -21,7 +22,8 @@ Ajax.prototype = {
       console.log("Make post request on load call back");
     };
 
-    request.send(JSON.stringify(diaryInput));
+    // request.send(JSON.stringify(diaryInput));
+    request.send(diaryInput);
   },
 
   makeDeleteRequest: function( url, title ){

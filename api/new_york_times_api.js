@@ -1,3 +1,6 @@
+var FaveNews = require('../client/src/models/faveNews');
+var faveNews = new FaveNews();
+
 var NYTApi = function(){
   
   
@@ -21,6 +24,13 @@ NYTApi.prototype = {
     request.send();
   },
 
+  handleFaveButtonClick: function(){
+    faveNews.addNewsItem(this.value);
+    console.log("this.value" + JSON.parse(this.value));
+    console.log(this.value.title);
+    console.log("this" + this);
+  },
+
   makeArticle: function(parsedJson){
     var container = document.getElementById('news_info'); 
     console.log(container);
@@ -38,9 +48,17 @@ NYTApi.prototype = {
       var date = document.createElement('p');
       date.innerText = article.pub_date;
 
+      var newsValue = {
+        title: article.headline.print_headline,
+        summary: article.snippet,
+        date: article.pub_date
+      };
+
       var faveButton = document.createElement("button");
       faveButton.id = "newsFaveButton";
       faveButton.innerText = "Favourite";
+      faveButton.value = JSON.stringify(newsValue);
+      faveButton.onclick = this.handleFaveButtonClick;
 
       li.appendChild(heading);
       li.appendChild(summary);

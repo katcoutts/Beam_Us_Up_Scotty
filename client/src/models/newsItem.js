@@ -5,4 +5,4 @@ var NewsItem = function(options){
   this.text = options.text;
 }
 
-module.exports = DiaryEntry;
+module.exports = NewsItem;
