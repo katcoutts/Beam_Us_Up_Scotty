@@ -138,6 +138,12 @@ form textarea{
 }
 
 ul{
+  list-style-type: none;
+  padding-right: 30px;
+  margin-top: 30px;
+}
+
+#container_for_diary_entries ul{
   background-color: silver;
   margin-top: 30px;
   list-style-type: none;
@@ -180,12 +186,13 @@ p:nth-child(2){
 }
 */
 #flickrimages{
-  display: inline-flex;
-  margin-left:19%;
-  width: 40%;
+  display: inline-block;
+  margin-left:15%;
+  width: 35%;
   height:600px;
   overflow-y: scroll;
   overflow: auto;
+  background-color: #393659;
 }
 
 #news_from_home{
@@ -193,11 +200,12 @@ p:nth-child(2){
 }
 
 #news_info{
-  display: inline-flex;
+  display: inline-block;
   width: 40%;
   height:600px;
   overflow-y: scroll;
   overflow: auto;
+  background-color: #393659;
 }
 
 #weather_info{
