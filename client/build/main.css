@@ -254,4 +254,8 @@ p:nth-child(2){
   font-family: 'Open Sans', sans-serif;
 }
 
+b{
+  color: red;
+}
+
 

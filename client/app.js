@@ -8,6 +8,12 @@ var flickrApi = new FlickrApi();
 var DarkSky = require('../api/darkSkyApi');
 var darkSky = new DarkSky();
 
+
+var Clock = require('./src/models/clock');
+
+
+
+
 var DiaryUI = require('./src/views/diaryui');
 var IssLocationApi = require('../api/issLocationApi');
 var CountryApi = require('../api/country_api');
@@ -31,7 +37,9 @@ var handleSetHomeButton = function(){
   flickrApi.makeRequest(country);
   // iTunesApi.makeRequest();
   darkSky.makeRequest(latlng);
+
   countryApi.makeRequest(country);
+
 };
 
 var handleSubmitButton = function(event){
@@ -57,6 +65,10 @@ var handleSubmitButton = function(event){
   // };
   console.log("before makePostRequest in app.js");
   ajax.makePostRequest('/api/diary', diaryInput )
+};
+
+var handleClockTest = function(){
+  
 };
 
 var app = function(){
@@ -158,8 +170,9 @@ var app = function(){
     location.reload();
   }
   }
+  var clock = new Clock();
+  clock.startClock();
 
-
-}
+  }
 
 window.onload = app;
