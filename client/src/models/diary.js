@@ -20,6 +20,7 @@ Diary.prototype = {
     var diary = []
 
     for (var result of results){
+      
       var diaryEntry = new DiaryEntry(result);
       diary.push(diaryEntry);
     }

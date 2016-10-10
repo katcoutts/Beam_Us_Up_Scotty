@@ -19,6 +19,10 @@ DiaryUI.prototype = {
     element.appendChild(pTag);
   },
 
+  handleDelButton: function(){
+    console.log(this.value);
+  },
+
   render: function(results) {
     var container = document.getElementById("diary_entries");
 
@@ -26,6 +30,9 @@ DiaryUI.prototype = {
       var li = document.createElement("li");
       var delButton = document.createElement("button");
       delButton.id = "diaryDelButton";
+      console.log(result);
+      delButton.value = result.id;
+      delButton.onclick = this.handleDelButton
       this.appendText(li, result.title);
       this.appendText(li, result.text);
       this.appendText(li, result.date);
