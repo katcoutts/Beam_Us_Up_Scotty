@@ -12,7 +12,8 @@ var darkSky = new DarkSky();
 
 var DiaryUI = require('./src/views/diaryui');
 var IssLocationApi = require('../api/issLocationApi');
-
+var CountryApi = require('../api/country_api');
+var countryApi = new CountryApi();
 
 var Map = require("./src/models/map");
 var map;
@@ -32,7 +33,7 @@ var handleSetHomeButton = function(){
   flickrApi.makeRequest(country);
   iTunesApi.makeRequest();
   darkSky.makeRequest(latlng);
-
+  countryApi.makeRequest();
 };
 
 var handleSubmitButton = function(event){

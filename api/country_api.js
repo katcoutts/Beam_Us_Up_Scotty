@@ -1,10 +1,11 @@
-var CountryApi = function(country){
+var CountryApi = function(){
 
 }
 
 CountryApi.prototype = {
   makeRequest: function(url) {
     var self = this;
+    var url = "https://restcountries.eu/rest/v1/all";
     var request = new XMLHttpRequest();
     request.open("GET", url);
     request.onload = function(){
@@ -24,3 +25,5 @@ CountryApi.prototype = {
   }
 
 }
+
+module.exports = CountryApi;
