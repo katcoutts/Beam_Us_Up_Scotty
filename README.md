@@ -20,6 +20,11 @@ This is our Week 12 Group Project, a 7-day hackathon at [CodeClan](https://codec
 ```
 - In order to use third-party API, you need to get API keys for Flickr and New York Times API. Go to their websites and get the keys. 
 
+- In order to use Webpack, you need to install it globally on your computer to make its Terminal commands available. Run the following command in the terminal 
+```
+npm install webpack -g
+```
+
 - To get all the necessary tools and libraries, go to your your project directory in the terminal and run the following command.
 ```
 npm install
