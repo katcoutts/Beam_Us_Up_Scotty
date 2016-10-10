@@ -24,15 +24,19 @@ DarkSky.prototype = {
 
     var currentTemp = document.createElement("p");
     currentTemp.innerText = "Current Temperature: "+weatherData.currently.temperature;
+    currentTemp.id = "currentTemp";
 
     var weatherSummary = document.createElement("p");
     weatherSummary.innerText = "Summary: " + weatherData.daily.data[0].summary;
+    weatherSummary.id = "weatherSummary";
 
     var sunrise = document.createElement("p");
     sunrise.innerText = "Sunrise: " + new Date((weatherData.daily.data[0].sunriseTime)*1000);
+    sunrise.id = "sunriseTime";
 
     var sunset = document.createElement("p");
     sunset.innerText = "Sunset: " + new Date((weatherData.daily.data[0].sunsetTime)*1000);
+    sunset.id = "sunsetTime";
 
     container.appendChild(currentTemp);
     container.appendChild(weatherSummary);
