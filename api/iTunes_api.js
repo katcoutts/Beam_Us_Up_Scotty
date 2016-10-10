@@ -19,8 +19,27 @@ ITunesApi.prototype = {
     request.send();
   }, 
   makeITunesUrl: function(parsedJson){
-    console.log(parsedJson);
-    var container = document.getElementById('')
+    var container = document.getElementById('iTunes-music');
+    var ul = document.createElement('ul');
+    for (var i = 0; i < parsedJson.feed.entry.length; i++){
+      var mp4 = parsedJson.feed.entry[i].link[1].attributes.href;
+      console.log(mp4);
+      var li = document.createElement('li');
+      var audio = document.createElement('audio');
+      audio.setAttribute('controls', true);
+      
+      var source = document.createElement('source');
+      source.setAttribute('src', mp4);
+      source.setAttribute('type', 'audio/mp4');
+
+      audio.appendChild(source);
+      li.appendChild(audio);
+      ul.appendChild(li);
+    }
+    container.appendChild(ul);
+
+    // http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview62/v4/bd/6b/34/bd6b3443-d4c3-26fd-91c8-d0b31ab47ee3/mzaf_8046559398209773051.plus.aac.p.m4a
+    
     // var container = document.getElementById('ITunesimages')
     // var ul = document.createElement('ul');
     // for (var i = 0; i < parsedJson.photos.photo.length; i++){
