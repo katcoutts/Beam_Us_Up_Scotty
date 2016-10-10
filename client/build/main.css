@@ -66,6 +66,12 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
   text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
 }
 
+.homepage {
+  width: 300px;
+  height: 200px;
+  margin-left: auto;
+}
+
 #set_home_page{
   margin: auto;
   width: 90%;
