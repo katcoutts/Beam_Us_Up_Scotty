@@ -20,10 +20,17 @@ Diary.prototype = {
     var diary = []
 
     for (var result of results){
+      
       var diaryEntry = new DiaryEntry(result);
       diary.push(diaryEntry);
     }
-    return diary;
+    diary1 = diary.reverse();
+    return diary1;
+  },
+
+  deleteDiaryEntry: function(title){
+    var ajax = new Ajax();
+    ajax.makeDeleteRequest("http://localhost:3000/api/diary", title);
   }
 }
 

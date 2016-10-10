@@ -22,6 +22,15 @@ Ajax.prototype = {
     };
 
     request.send(JSON.stringify(diaryInput));
+  },
+
+  makeDeleteRequest: function( url, title ){
+    var request = new XMLHttpRequest();
+    request.open('DELETE', url, true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    // var diaryId = {_id: id};
+    // console.log(diaryId);
+    request.send(JSON.stringify({"title": title}));
   }
 
 }

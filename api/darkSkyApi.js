@@ -21,23 +21,36 @@ DarkSky.prototype = {
   makeWeatherDisplay: function(weatherData){
     console.log("make weather display called")
     var container = document.getElementById("weather_info");
+    var container2 = document.getElementById("sunrise_sunset");
 
     var currentTemp = document.createElement("p");
     currentTemp.innerText = "Current Temperature: "+weatherData.currently.temperature;
+    currentTemp.id = "currentTemp";
 
     var weatherSummary = document.createElement("p");
     weatherSummary.innerText = "Summary: " + weatherData.daily.data[0].summary;
+    weatherSummary.id = "weatherSummary";
 
     var sunrise = document.createElement("p");
     sunrise.innerText = "Sunrise: " + new Date((weatherData.daily.data[0].sunriseTime)*1000);
+    sunrise.id = "sunriseTime";
+
+    var sun = document.createElement("img");
+    sun.src = "http://localhost:3000/public/Sunimg.jpg";
 
     var sunset = document.createElement("p");
     sunset.innerText = "Sunset: " + new Date((weatherData.daily.data[0].sunsetTime)*1000);
+    sunset.id = "sunsetTime";
+
+    var moon = document.createElement("img");
+    moon.src = "http://localhost:3000/public/weemoonimg.jpg";
 
     container.appendChild(currentTemp);
     container.appendChild(weatherSummary);
-    container.appendChild(sunrise);
-    container.appendChild(sunset);
+    container2.appendChild(sun);
+    container2.appendChild(sunrise);
+    container2.appendChild(moon);
+    container2.appendChild(sunset);
   }
 
   
