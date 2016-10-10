@@ -4,8 +4,8 @@ var NYTApi = require('../api/new_york_times_api');
 var nytApi = new NYTApi();
 var FlickrApi = require('../api/flickr_api');
 var flickrApi = new FlickrApi();
-
-
+var SpotifyApi = require('../api/spotify_api');
+var spotifyApi = new SpotifyApi();
 
 var DiaryUI = require('./src/views/diaryui');
 var IssLocationApi = require('../api/issLocationApi');
@@ -25,11 +25,11 @@ var handleSetHomeButton = function(){
 
   var nytrequest = localStorage.getItem("region and country")
 
+
+
   nytApi.makeRequest(country);
-
-  // nytApi.makeRequest();
   flickrApi.makeRequest(country);
-
+  spotifyApi.makeRequest();
 };
 
 var handleSubmitButton = function(event){
