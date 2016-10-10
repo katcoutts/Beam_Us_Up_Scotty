@@ -5,8 +5,6 @@ var nytApi = new NYTApi();
 var FlickrApi = require('../api/flickr_api');
 var flickrApi = new FlickrApi();
 
-var ITunesApi = require('../api/iTunes_api');
-var iTunesApi = new ITunesApi();
 var DarkSky = require('../api/darkSkyApi');
 var darkSky = new DarkSky();
 
@@ -31,9 +29,9 @@ var handleSetHomeButton = function(){
 
   nytApi.makeRequest(country);
   flickrApi.makeRequest(country);
-  iTunesApi.makeRequest();
+  // iTunesApi.makeRequest();
   darkSky.makeRequest(latlng);
-  countryApi.makeRequest();
+  countryApi.makeRequest(country);
 };
 
 var handleSubmitButton = function(event){

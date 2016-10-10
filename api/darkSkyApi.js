@@ -10,16 +10,12 @@ DarkSky.prototype = {
     request.open("GET", url)
     request.onload = function(){
      var weatherData = JSON.parse( this.responseText );
-     console.log(weatherData);
-     console.log(new Date((weatherData.daily.data[0].sunriseTime)*1000));
-     console.log(new Date((weatherData.daily.data[0].sunsetTime)*1000));
      self.makeWeatherDisplay(weatherData);
     };
     request.send();
   },
 
   makeWeatherDisplay: function(weatherData){
-    console.log("make weather display called")
     var container = document.getElementById("weather_info");
     var container2 = document.getElementById("sunrise_sunset");
 

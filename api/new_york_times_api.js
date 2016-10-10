@@ -11,7 +11,7 @@ NYTApi.prototype = {
     request.open("GET", url);
     request.onload = function(){
       if(this.status !== 200) {
-         console.log("error", this.status);
+         return 
        }
        json = this.responseText;
        var parsedJson = JSON.parse(json);
@@ -22,8 +22,6 @@ NYTApi.prototype = {
 
   makeArticle: function(parsedJson){
     var container = document.getElementById('news_info'); 
-    console.log(container);
-    console.log("make article");
     var ul = document.createElement('ul');
     for(article of parsedJson.response.docs){
       var li = document.createElement('li');

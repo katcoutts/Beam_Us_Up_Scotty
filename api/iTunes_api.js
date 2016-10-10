@@ -1,10 +1,10 @@
-var ITunesApi = function(){
+var ITunesApi = function(countryCode){
 }
 
 ITunesApi.prototype = {
-  makeRequest: function(){
+  makeRequest: function(countryCode){
     var self = this;
-    var url = "https://itunes.apple.com/us/rss/topsongs/limit=10/json";
+    var url = "https://itunes.apple.com/"+countryCode+"/rss/topsongs/limit=10/json";
     var request = new XMLHttpRequest();
     request.open("GET", url);
     

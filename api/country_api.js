@@ -1,11 +1,14 @@
-var CountryApi = function(){
+var ITunesApi = require('./iTunes_api');
+var iTunesApi = new ITunesApi();
+
+var CountryApi = function(country){
 
 }
 
 CountryApi.prototype = {
-  makeRequest: function(url) {
+  makeRequest: function(country) {
     var self = this;
-    var url = "https://restcountries.eu/rest/v1/all";
+    var url = "https://restcountries.eu/rest/v1/name/"+ country + "?fullText=true";
     var request = new XMLHttpRequest();
     request.open("GET", url);
     request.onload = function(){
@@ -16,12 +19,11 @@ CountryApi.prototype = {
       var parsedJson = JSON.parse(json);
       self.makeCountryCode(parsedJson);
     }
-    
     request.send();
   },
   makeCountryCode: function(parsedJson){
-    console.log(parsedJson);
-
+    var countryCode = parsedJson[0].alpha2Code.toLowerCase();
+    iTunesApi.makeRequest(countryCode);
   }
 
 }
