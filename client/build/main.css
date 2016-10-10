@@ -89,9 +89,9 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
 }
 
 #set_home{
-  width: 200px;
-  height: 150px;
-  margin: auto;
+  width: 400px;
+  height: 100px;
+  margin-left: 400px;
 }
 
 #submitDiary{
