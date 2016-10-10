@@ -150,9 +150,11 @@ var app = function(){
     map.addClickEvent();
   }
 
-  var homePageButton = document.querySelector('.homepage')
+  var homePageButtons = document.querySelectorAll('.homepage')
+    for (var homePageButton of homePageButtons){
   homePageButton.onclick = function(){
     location.reload();
+  }
   }
 
 
