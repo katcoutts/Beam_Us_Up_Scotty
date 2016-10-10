@@ -75,7 +75,7 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
 }
 
 .homepage:hover, .homepage:focus{
-  background-color: darkred;
+  background-color: #dd1e1e;
 }
 
 #set_home_page{
