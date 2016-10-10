@@ -188,6 +188,10 @@ p:nth-child(2){
   overflow: auto;
 }
 
+#news_from_home{
+  display: inline-block;
+}
+
 #news_info{
   display: inline-flex;
   width: 40%;
@@ -195,6 +199,27 @@ p:nth-child(2){
   overflow-y: scroll;
   overflow: auto;
 }
-=======
+
+#weather_info{
+  display: inline-block;
+  align: right;
+  font: sans-serif;
+}
+
+#weatherSummary{
+  color: green;
+}
+
+#currentTemp{
+  color: green;
+}
+
+#sunriseTime{
+  color: gold;
+}
+
+#sunsetTime{
+  color: grey;
+}
 
 
