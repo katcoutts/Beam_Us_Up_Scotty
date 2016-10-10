@@ -22,6 +22,7 @@ DiaryUI.prototype = {
   handleDelButton: function(){
     console.log(this.value);
     diary.deleteDiaryEntry(this.value);
+    location.reload();
   },
 
   render: function(results) {

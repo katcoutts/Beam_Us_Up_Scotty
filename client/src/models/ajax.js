@@ -28,10 +28,6 @@ Ajax.prototype = {
     var request = new XMLHttpRequest();
     request.open('DELETE', url, true);
     request.setRequestHeader('Content-Type', 'application/json');
-    request.onload = function(){
-      console.log("delete request on load firing")
-      location.reload();
-    }
     // var diaryId = {_id: id};
     // console.log(diaryId);
     request.send(JSON.stringify({"title": title}));
