@@ -4,8 +4,11 @@ var NYTApi = require('../api/new_york_times_api');
 var nytApi = new NYTApi();
 var FlickrApi = require('../api/flickr_api');
 var flickrApi = new FlickrApi();
+
 var ITunesApi = require('../api/iTunes_api');
 var iTunesApi = new ITunesApi();
+var DarkSky = require('../api/darkSkyApi');
+var darkSky = new DarkSky();
 
 var DiaryUI = require('./src/views/diaryui');
 var IssLocationApi = require('../api/issLocationApi');
@@ -15,11 +18,11 @@ var Map = require("./src/models/map");
 var map;
 
 var handleSetHomeButton = function(){
-  console.log(map.markerPosition());
+  var latlng = map.markerPosition()
+  
   // var array = map.geocodeLatLng();
   var country = localStorage.getItem("country");
   console.log(country);
-  localStorage.setItem("latlng", map.markerPosition());
   var welcomeDiv = document.getElementById("select_home_page");
   welcomeDiv.style.display = "none";
 
@@ -28,6 +31,8 @@ var handleSetHomeButton = function(){
   nytApi.makeRequest(country);
   flickrApi.makeRequest(country);
   iTunesApi.makeRequest();
+  darkSky.makeRequest(latlng);
+
 };
 
 var handleSubmitButton = function(event){
