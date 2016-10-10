@@ -22,8 +22,15 @@ ITunesApi.prototype = {
     var container = document.getElementById('iTunes-music');
     var ul = document.createElement('ul');
     for (var i = 0; i < parsedJson.feed.entry.length; i++){
+      // console.log('json ',parsedJson.feed.entry[i]);
       var mp4 = parsedJson.feed.entry[i].link[1].attributes.href;
-      console.log(mp4);
+      var songName = parsedJson.feed.entry[i]['im:artist'].label;
+      var artist = parsedJson.feed.entry[i]['im:collection']['im:name'].label;
+      var image = parsedJson.feed.entry[i]['im:image'][2].label;
+      console.log('artist ',artist);
+      console.log('song ',songName);
+      console.log('url ',image);
+      var artist = parsedJson.feed.entry[i].link[1].attributes.href;
       var li = document.createElement('li');
       var audio = document.createElement('audio');
       audio.setAttribute('controls', true);
