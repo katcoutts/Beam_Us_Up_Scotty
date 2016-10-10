@@ -36,25 +36,36 @@ var Map =  function( container, centre, zoom ){
     })
   };
 
-  this.addMarker = function(coordinates, note) {
-    var info_window = new google.maps.InfoWindow({content: note});
+
+  var info_window;  
+
+  this.addMarker = function(coordinates) {   
       var marker2 = new google.maps.Marker({map: this.googleMap, position: coordinates, animation: google.maps.Animation.DROP});
-      if (note){
-        marker.addListener('click', function() {
-          info_window.open(map, marker);
-         });}
-      return marker2;
-  }
+        info_window = new google.maps.InfoWindow({});
+        info_window.open(this.googleMap, marker2);      
+  };
+
+
+  this.updateWindow = function(content){
+    console.log("update window called")
+    info_window.setContent(content);
+  };
+
+
 
   this.addClickEvent = function(){
+    var self = this;
     google.maps.event.addListener(this.googleMap, 'click', function(event){
       var position = { lat: event.latLng.lat() , lng: event.latLng.lng()};
       this.addMarker(position);
       var issPassOverApi = new IssPassOverApi();
-      var issPassOver = issPassOverApi.makeRequest(position);
+      var issPassOver = issPassOverApi.makeRequest(position, self);
       console.log(position);
+
     }.bind(this))
-  }
+  };
+
+  
 
 
   this.markerPosition = function(){
@@ -79,7 +90,7 @@ var Map =  function( container, centre, zoom ){
     marker.setPosition(coords);
   }
 
-  
+
 
 
 }
