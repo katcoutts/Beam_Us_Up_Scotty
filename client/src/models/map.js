@@ -1,3 +1,5 @@
+var IssPassOverApi = require('../../../api/issPassOverApi');
+
 var Map =  function( container, centre, zoom ){
 
   this.googleMap = new google.maps.Map( container, {
@@ -10,13 +12,15 @@ var Map =  function( container, centre, zoom ){
   this.createMarker = function(){
     marker = new google.maps.Marker({
       map: this.googleMap,
-      position: this.googleMap.center
+      position: this.googleMap.center,
+      animation: google.maps.Animation.DROP
     })
   };
 
-  // this.addFancyMarker = function(image){
-  //   marker.setIcon("ISSimage.png")
-  // };
+  this.addFancyMarker = function(image){
+    marker.setIcon("http://localhost:3000/public/ISS-2011.png")
+  };
+
 
   this.addClickListener = function(){
     var self = this;
@@ -31,6 +35,38 @@ var Map =  function( container, centre, zoom ){
 
     })
   };
+
+
+  var info_window;  
+
+  this.addMarker = function(coordinates) {   
+      var marker2 = new google.maps.Marker({map: this.googleMap, position: coordinates, animation: google.maps.Animation.DROP});
+        info_window = new google.maps.InfoWindow({});
+        info_window.open(this.googleMap, marker2);      
+  };
+
+
+  this.updateWindow = function(content){
+    console.log("update window called")
+    info_window.setContent(content);
+  };
+
+
+
+  this.addClickEvent = function(){
+    var self = this;
+    google.maps.event.addListener(this.googleMap, 'click', function(event){
+      var position = { lat: event.latLng.lat() , lng: event.latLng.lng()};
+      this.addMarker(position);
+      var issPassOverApi = new IssPassOverApi();
+      var issPassOver = issPassOverApi.makeRequest(position, self);
+      console.log(position);
+
+    }.bind(this))
+  };
+
+  
+
 
   this.markerPosition = function(){
     return marker.position;
@@ -54,7 +90,7 @@ var Map =  function( container, centre, zoom ){
     marker.setPosition(coords);
   }
 
-  
+
 
 
 }

@@ -7,8 +7,10 @@ var flickrApi = new FlickrApi();
 var DarkSky = require('../api/darkSkyApi');
 var darkSky = new DarkSky();
 
+
+
 var DiaryUI = require('./src/views/diaryui');
-var IssLocationApi = require('./../api/issLocationApi');
+var IssLocationApi = require('../api/issLocationApi');
 
 
 var Map = require("./src/models/map");
@@ -147,7 +149,15 @@ var app = function(){
     var issLocationPage = document.querySelector('#iss_location_page');
     issLocationPage.style.display ='block';
     map.createMarker();
-    // map.addFancyMarker();
+    map.addFancyMarker();
+    map.addClickEvent();
+  }
+
+  var homePageButtons = document.querySelectorAll('.homepage')
+    for (var homePageButton of homePageButtons){
+  homePageButton.onclick = function(){
+    location.reload();
+  }
   }
 
 

@@ -16,8 +16,8 @@ IssLocationApi.prototype = {
         lat:parsedJson.iss_position.latitude,
         lng:parsedJson.iss_position.longitude
       } 
-      // var marker = new google.maps.Marker({map: map, position: newCoords, animation: google.maps.Animation.DROP, icon: image});
       map.setMarker(newCoords);
+
     }
     request.send();
   }
