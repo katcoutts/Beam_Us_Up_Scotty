@@ -32,7 +32,7 @@ DiaryUI.prototype = {
       var delButton = document.createElement("button");
       delButton.id = "diaryDelButton";
       console.log(result);
-      delButton.value = result.id;
+      delButton.value = result.title;
       delButton.onclick = this.handleDelButton
       this.appendText(li, result.title);
       this.appendText(li, result.text);

@@ -28,9 +28,9 @@ Diary.prototype = {
     return diary1;
   },
 
-  deleteDiaryEntry: function(id){
+  deleteDiaryEntry: function(title){
     var ajax = new Ajax();
-    ajax.makeDeleteRequest("http://localhost:3000/api/diary", id);
+    ajax.makeDeleteRequest("http://localhost:3000/api/diary", title);
   }
 }
 

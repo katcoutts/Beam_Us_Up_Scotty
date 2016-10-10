@@ -19,7 +19,7 @@ var DiaryApi = function(app) {
 
   app.delete('/api/diary', function(req, res){
     console.log(req.body);
-    // query.delete(req.body);
+    query.delete(req.body);
   });
 }
 

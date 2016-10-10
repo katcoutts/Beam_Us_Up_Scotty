@@ -24,6 +24,15 @@ DiaryQuery.prototype = {
   })
   },
 
+  delete: function(title){
+    MongoClient.connect(this.url, function(err, db){
+      var collection = db.collection('diary');
+      console.log(collection);
+      // console.log("delete mongo db request ",diaryId);
+      collection.remove(title);
+    })
+  }
+
 
 }
 
