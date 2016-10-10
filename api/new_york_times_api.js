@@ -38,9 +38,14 @@ NYTApi.prototype = {
       var date = document.createElement('p');
       date.innerText = article.pub_date;
 
+      var faveButton = document.createElement("button");
+      faveButton.id = "newsFaveButton";
+      faveButton.innerText = "Favourite";
+
       li.appendChild(heading);
       li.appendChild(summary);
       li.appendChild(date);
+      li.appendChild(faveButton);
       ul.appendChild(li);
       
     }
