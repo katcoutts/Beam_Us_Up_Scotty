@@ -15,7 +15,6 @@ NYTApi.prototype = {
        }
        json = this.responseText;
        var parsedJson = JSON.parse(json);
-       console.log(parsedJson);
        self.makeArticle(parsedJson);
     }
     request.send();
