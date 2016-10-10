@@ -25,6 +25,7 @@ var map;
 var handleSetHomeButton = function(){
   var latlng = map.markerPosition()
   
+  
   // var array = map.geocodeLatLng();
   var country = localStorage.getItem("country");
   console.log(country);
@@ -36,9 +37,11 @@ var handleSetHomeButton = function(){
   nytApi.makeRequest(country);
   flickrApi.makeRequest(country);
   // iTunesApi.makeRequest();
-  darkSky.makeRequest(latlng);
+  darkSky.makeRequest(latlng, Clock);
 
   countryApi.makeRequest(country);
+
+  
 
 };
 
@@ -170,8 +173,7 @@ var app = function(){
     location.reload();
   }
   }
-  var clock = new Clock();
-  clock.startClock();
+ 
 
   }
 
