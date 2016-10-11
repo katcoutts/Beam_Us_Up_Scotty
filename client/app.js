@@ -3,21 +3,19 @@ var Ajax = require('./src/models/ajax');
 var NYTApi = require('../api/new_york_times_api');
 var nytApi = new NYTApi();
 var FlickrApi = require('../api/flickr_api');
+var FlickrUi = require('./src/views/flickrUi');
 var flickrApi = new FlickrApi();
 
 var DarkSky = require('../api/darkSkyApi');
+var DarkSkyUi = require('./src/views/darkSkyUi');
 var darkSky = new DarkSky();
 
 var FaveNewsUI = require('./src/views/newsFaveUI');
-
 
 var Clock = require('./src/models/clock');
 
 var ITunesApi = require('../api/iTunes_api');
 var iTunesApi = new ITunesApi();
-
-
-
 
 var DiaryUI = require('./src/views/diaryui');
 var IssLocationApi = require('../api/issLocationApi');
@@ -28,7 +26,9 @@ var Map = require("./src/models/map");
 var map;
 
 var handleSetHomeButton = function(){
-  var latlng = map.markerPosition()
+  var latlng = map.markerPosition();
+  var darkSkyUi = new DarkSkyUi();
+  var flickrUi = new FlickrUi();
   
   
   // var array = map.geocodeLatLng();
@@ -40,9 +40,9 @@ var handleSetHomeButton = function(){
   var nytrequest = localStorage.getItem("region and country")
 
   nytApi.makeRequest(country);
-  flickrApi.makeRequest(country);
+  flickrApi.makeRequest(country, flickrUi.makeFlickrUrl);
   // iTunesApi.makeRequest();
-  darkSky.makeRequest(latlng, Clock);
+  darkSky.makeRequest(latlng, Clock, darkSkyUi.makeWeatherDisplay);
 
   countryApi.makeRequest(country, iTunesApi);
 
