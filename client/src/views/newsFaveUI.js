@@ -39,7 +39,7 @@ NewsFaveUI.prototype = {
       newsDelButton.value = result.title;
       newsDelButton.onclick = this.handleNewsDelButton
       this.appendText(li, result.title);
-      this.appendText(li, result.text);
+      this.appendText(li, result.summary);
       this.appendText(li, result.date);
       newsDelButton.innerText = "Delete";
       li.appendChild(newsDelButton);
