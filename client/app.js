@@ -99,41 +99,53 @@ var handleMapButtonClick = function(){
   }
 };
 
+var setDate = function(){
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0
+  var yyyy = today.getFullYear();
+  if(dd<10){
+      dd='0'+dd
+  } 
+  if(mm<10){
+      mm='0'+mm
+  } 
+  var today = yyyy+'-'+mm+'-'+dd;
+  return today;
+};
+
 var handleDiaryEntryButtonClick = function(){
-
-      var header = document.querySelector('#header');
-      header.style.display='none';
-      var landingPage = document.querySelector('#landing_page');
-      landingPage.style.display='none';
-      var diaryEntryPage = document.querySelector('#diary_entry_form');
-      diaryEntryPage.style.display='block';
-      var diarySubmitButton = document.querySelector('#submitDiary');
-
-      // Get default value for today
-      var today = new Date();
-      var dd = today.getDate();
-      var mm = today.getMonth()+1; //January is 0
-      var yyyy = today.getFullYear();
-      if(dd<10){
-          dd='0'+dd
-      } 
-      if(mm<10){
-          mm='0'+mm
-      } 
-      var today = yyyy+'-'+mm+'-'+dd;
-      console.log(today);
-      document.getElementById("date").setAttribute('value', today);
-
-      diarySubmitButton.onclick = function(){
-        var diaryEntryPage = document.querySelector('#diary_entry_form');
-        diaryEntryPage.style.display='none';
-        var diaryViewPage = document.querySelector('#view_diary_page');
-        diaryViewPage.style.display ='block'
-        new DiaryUI();
-        location.reload();
-      }
+    setElementStyle('#header', 'none');
+    setElementStyle('#landing_page', 'none');
+    setElementStyle('#diary_entry_form', 'block');
+      
+    var diarySubmitButton = document.querySelector('#submitDiary');
+      
+    // Get default value for today
+    var today = setDate();
     
-}
+    console.log(today);
+    document.getElementById("date").setAttribute('value', today);
+
+    diarySubmitButton.onclick = function(){
+    setElementStyle('#diary_entry_form', 'none');
+      
+    setElementStyle('#view_diary_page', 'block');
+      
+    new DiaryUI();
+    location.reload();
+    }
+    
+};
+
+var handleDiaryButtonClick = function(){
+    setElementStyle('#header', 'none');
+    setElementStyle('#landing_page', 'none');
+    setElementStyle('#view_diary_page', 'block');
+    
+    new DiaryUI();
+    new FaveNewsUI();
+  }
 
 
 var app = function(){
@@ -150,16 +162,7 @@ var app = function(){
   diaryEntryButton.onclick = handleDiaryEntryButtonClick;
 
   var diaryButton = document.querySelector('#diary_entry');
-  diaryButton.onclick=function(){
-    var header = document.querySelector('#header');
-    header.style.display='none';
-    var landingPage = document.querySelector('#landing_page');
-    landingPage.style.display='none';
-    var diaryViewPage = document.querySelector('#view_diary_page');
-    diaryViewPage.style.display ='block';
-    new DiaryUI();
-    new FaveNewsUI();
-  }
+  diaryButton.onclick = handleDiaryButtonClick;
 
   var issLocationButton = document.querySelector('#iss_page_entry');
   issLocationButton.onclick = function(){
