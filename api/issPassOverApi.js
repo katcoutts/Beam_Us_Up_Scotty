@@ -18,7 +18,10 @@ IssPassOverApi.prototype = {
       json = this.responseText;
       var parsedJson = JSON.parse(json);
       console.log(parsedJson);
+      requestTime = (parsedJson.request.datetime) * 1000;
       time = (parsedJson.response[0].risetime) * 1000;
+      timeDiff = time - requestTime;
+      console.log(timeDiff);
       console.log(time);
       myDate = new Date(time);
       console.log(myDate);
