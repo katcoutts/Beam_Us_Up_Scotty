@@ -6,6 +6,7 @@ var myDate;
 var time; 
 
 IssPassOverApi.prototype = {
+
   makeRequest: function(position, map){
 
     url = "http://api.open-notify.org/iss-pass.json?lat=" +position.lat + "&lon=" + position.lng;
@@ -18,16 +19,28 @@ IssPassOverApi.prototype = {
       json = this.responseText;
       var parsedJson = JSON.parse(json);
 
-      console.log(parsedJson);
       requestTime = (parsedJson.request.datetime) * 1000;
       time = (parsedJson.response[0].risetime) * 1000;
       timeDiff = time - requestTime;
-      console.log(timeDiff);
-      console.log(time);
 
-      myDate = new Date(time);
+      var seconds = (timeDiff / 1000).toFixed(0);
+      var minutes = Math.floor(seconds / 60);
+      var hours = "";
+      if (minutes > 59) {
+        hours = Math.floor(minutes / 60);
+        minutes = minutes - (hours * 60);
+      }
+      seconds = Math.floor(seconds % 60);
+
+      var passOver = hours + " hrs " + minutes + " mins " + seconds + " seconds";
+
+      if (hours === ""){
+        passOver = minutes + " minutes " + seconds + " seconds";
+      }
+      // myDate = new Date(time);
+
       var text = document.createElement('p');
-      text.innerText = "Next pass over on "+ myDate;
+      text.innerText = "Next pass time is in " + passOver;
       map.updateWindow(text);
     }
     request.send();
