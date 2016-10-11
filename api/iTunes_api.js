@@ -10,7 +10,8 @@ ITunesApi.prototype = {
     
     request.onload = function(){
       if(this.status !== 200) {
-        return;
+        var iTunesDiv = document.getElementById("iTunes-music");
+        iTunesDiv.style.display = "none";
       }
       json = this.responseText;
       var parsedJson = JSON.parse(json);
