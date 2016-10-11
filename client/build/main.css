@@ -95,8 +95,8 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
   height: 40px;
   display: inline;
   font-size: 24px;
-  margin-left: 300px;
-  margin-top: -150px;
+  margin-left: 280px;
+  margin-top: 5px;
 }
 
 #newsFaveButton {
