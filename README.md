@@ -70,4 +70,3 @@ Then open a browser and visit localhost: 3000
 - [Dark Sky API](https://darksky.net/dev/)
 - [ISS Location API](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)
 
-### Further Possible Extensions
