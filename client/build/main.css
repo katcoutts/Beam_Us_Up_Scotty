@@ -200,11 +200,12 @@ p:nth-child(2){
   display:flex;
 }
 */
-#flickrimages{
+#flickrimages, #iTunes-music{
   display: inline-block;
+  float: right;
   margin-left:15%;
-  width: 35%;
-  height:600px;
+  width: 45%;
+  height:300px;
   overflow-y: scroll;
   overflow: auto;
   background-color: #393659;
