@@ -15,6 +15,7 @@ var FaveNewsUI = require('./src/views/newsFaveUI');
 var Clock = require('./src/models/clock');
 
 var ITunesApi = require('../api/iTunes_api');
+var ITunesUi = require('./src/views/iTunesUi');
 var iTunesApi = new ITunesApi();
 
 var DiaryUI = require('./src/views/diaryui');
@@ -29,6 +30,7 @@ var handleSetHomeButton = function(){
   var latlng = map.markerPosition();
   var darkSkyUi = new DarkSkyUi();
   var flickrUi = new FlickrUi();
+  var iTunesUi = new ITunesUi();
   
   
   // var array = map.geocodeLatLng();
@@ -44,9 +46,8 @@ var handleSetHomeButton = function(){
   // iTunesApi.makeRequest();
   darkSky.makeRequest(latlng, Clock, darkSkyUi.makeWeatherDisplay);
 
-  countryApi.makeRequest(country, iTunesApi);
+  countryApi.makeRequest(country, iTunesApi, iTunesUi.makeITunesUrl);
 
-  
 
 };
 

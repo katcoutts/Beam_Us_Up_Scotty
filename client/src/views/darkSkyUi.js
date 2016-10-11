@@ -30,10 +30,12 @@ DarkSkyUi.prototype = {
 
     var weatherSummary = self.makePtag("weatherSummary", "Summary: " + weatherData.daily.data[0].summary);
    
-
-    var sunrise = self.makePtag("sunriseTime", "Sunrise: " + new Date((weatherData.daily.data[0].sunriseTime)*1000));
+    var dateSunrise = new Date(((weatherData.daily.data[0].sunriseTime)*1000)+(weatherData.offset*60*60*1000));
+    var dateSunset = new Date(((weatherData.daily.data[0].sunsetTime)*1000)+(weatherData.offset*60*60*1000));
     
-    var sunset = self.makePtag("sunsetTime", "Sunset: " + new Date((weatherData.daily.data[0].sunsetTime)*1000));
+    var sunrise = self.makePtag("sunriseTime", "Sunrise: " + dateSunrise.getDate() + "/"+ (dateSunrise.getMonth()+1)+ " "+dateSunrise.getHours()+":"+dateSunrise.getMinutes());
+    
+    var sunset = self.makePtag("sunsetTime", "Sunset: " + dateSunset.getDate() + "/"+ (dateSunset.getMonth()+1)+ " "+dateSunset.getHours()+":"+dateSunset.getMinutes());
 
     var sun = self.makeWeatherImage("http://localhost:3000/public/Sunimg.jpg");
     var moon = self.makeWeatherImage("http://localhost:3000/public/weemoonimg.jpg")    
