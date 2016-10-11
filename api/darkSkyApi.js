@@ -25,7 +25,7 @@ DarkSky.prototype = {
     var container2 = document.getElementById("sunrise_sunset");
 
     var currentTemp = document.createElement("p");
-    currentTemp.innerText = "Current Temperature: "+weatherData.currently.temperature;
+    currentTemp.innerText = "Current Temperature: "+weatherData.currently.temperature + " °C";
     currentTemp.id = "currentTemp";
 
     var weatherSummary = document.createElement("p");
