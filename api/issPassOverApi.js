@@ -22,7 +22,7 @@ IssPassOverApi.prototype = {
       requestTime = (parsedJson.request.datetime) * 1000;
       time = (parsedJson.response[0].risetime) * 1000;
       timeDiff = time - requestTime;
-
+      
       var seconds = (timeDiff / 1000).toFixed(0);
       var minutes = Math.floor(seconds / 60);
       var hours = "";
