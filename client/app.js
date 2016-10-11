@@ -67,21 +67,74 @@ var handleSubmitButton = function(event){
     }
   }
   diaryInput = JSON.stringify(diaryInput)
-  // var postRequest = function(){
-  //     if (this.status != 200) console.log("not 200");
-  //     // var jsonString = this.responseText;
-  //     // var results = JSON.parse(jsonString);
-  //     // var diary = self.populateDiary(results);
-  //     console.log("hello")
-  //     // callback(diary);
-  // };
-  console.log("before makePostRequest in app.js");
+
   ajax.makePostRequest('/api/diary', diaryInput )
 };
 
-var handleClockTest = function(){
-  
+var setElementStyle = function(element, displayStyle){
+  var tag = document.querySelector(element);
+  tag.style.display = displayStyle;
 };
+
+var handleMapButtonClick = function(){
+  setElementStyle('#header', 'none');
+  setElementStyle('#landing_page', 'none');
+  setElementStyle('#select_home_page', 'block');
+  
+  var container = document.getElementById("welcome_map");
+  var centre = {lat:0, lng:0};
+  var zoom = 2;
+  map = new Map( container, centre, zoom );
+  map.createMarker();
+  map.addClickListener();
+
+  var submitLocationButton = document.querySelector('#set_home');
+  submitLocationButton.onclick = function(){
+    setElementStyle('#select_home_page', 'none');
+    setElementStyle('#home_info_page', 'block');
+   
+    var header = document.querySelector('#header');
+    header.innerHTML = "News From Home";
+    handleSetHomeButton();
+  }
+};
+
+var handleDiaryEntryButtonClick = function(){
+
+      var header = document.querySelector('#header');
+      header.style.display='none';
+      var landingPage = document.querySelector('#landing_page');
+      landingPage.style.display='none';
+      var diaryEntryPage = document.querySelector('#diary_entry_form');
+      diaryEntryPage.style.display='block';
+      var diarySubmitButton = document.querySelector('#submitDiary');
+
+      // Get default value for today
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0
+      var yyyy = today.getFullYear();
+      if(dd<10){
+          dd='0'+dd
+      } 
+      if(mm<10){
+          mm='0'+mm
+      } 
+      var today = yyyy+'-'+mm+'-'+dd;
+      console.log(today);
+      document.getElementById("date").setAttribute('value', today);
+
+      diarySubmitButton.onclick = function(){
+        var diaryEntryPage = document.querySelector('#diary_entry_form');
+        diaryEntryPage.style.display='none';
+        var diaryViewPage = document.querySelector('#view_diary_page');
+        diaryViewPage.style.display ='block'
+        new DiaryUI();
+        location.reload();
+      }
+    
+}
+
 
 var app = function(){
   
@@ -90,66 +143,11 @@ var app = function(){
 
 // KAT'S STUFF FOR CHECKING OUT DIV STYLING
   var mapButton = document.querySelector('#map_page_entry');
-  mapButton.onclick = function(){
-    var header = document.querySelector('#header');
-    header.style.display='none';
-    var landingPage = document.querySelector('#landing_page');
-    landingPage.style.display='none';
-    var mapPage = document.querySelector('#select_home_page');
-    mapPage.style.display='block';
-    var container = document.getElementById("welcome_map");
-    var centre = {lat:0, lng:0};
-    var zoom = 2;
-    map = new Map( container, centre, zoom );
-    map.createMarker();
-    map.addClickListener();
-    var submitLocationButton = document.querySelector('#set_home');
-    submitLocationButton.onclick = function(){
-      var mapPage = document.querySelector('#select_home_page');
-      mapPage.style.display='none';
-      var homeInfoPage = document.querySelector('#home_info_page');
-      homeInfoPage.style.display='block';
-      var header = document.querySelector('#header');
-      header.innerHTML = "News From Home";
-      handleSetHomeButton();
-    }
-  }
+  mapButton.onclick = handleMapButtonClick;
 
   var diaryEntryButton = document.querySelector('#add_diary_entry');
   // TODO: Make this anonymous function into a separate function
-  diaryEntryButton.onclick = function(){
-    var header = document.querySelector('#header');
-    header.style.display='none';
-    var landingPage = document.querySelector('#landing_page');
-    landingPage.style.display='none';
-    var diaryEntryPage = document.querySelector('#diary_entry_form');
-    diaryEntryPage.style.display='block';
-    var diarySubmitButton = document.querySelector('#submitDiary');
-
-    // Get default value for today
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0
-    var yyyy = today.getFullYear();
-    if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
-    var today = yyyy+'-'+mm+'-'+dd;
-    console.log(today);
-    document.getElementById("date").setAttribute('value', today);
-
-    diarySubmitButton.onclick = function(){
-      var diaryEntryPage = document.querySelector('#diary_entry_form');
-      diaryEntryPage.style.display='none';
-      var diaryViewPage = document.querySelector('#view_diary_page');
-      diaryViewPage.style.display ='block'
-      new DiaryUI();
-      location.reload();
-    }
-  }
+  diaryEntryButton.onclick = handleDiaryEntryButtonClick;
 
   var diaryButton = document.querySelector('#diary_entry');
   diaryButton.onclick=function(){
