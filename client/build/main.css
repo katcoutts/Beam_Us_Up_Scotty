@@ -278,7 +278,10 @@ p:nth-child(2){
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
 }
-
+#date{
+  height: 40px;
+  font-size: 18px;
+}
 
 #clock{
   color: red;
