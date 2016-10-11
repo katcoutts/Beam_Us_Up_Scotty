@@ -14,6 +14,7 @@ h2{
   color: silver;
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
+  margin-left: 20px;
 }
 
 #landing_page{
@@ -210,22 +211,29 @@ p:nth-child(2){
 #flickrimages, #iTunes-music{
   display: inline-block;
   float: right;
-  margin-left:15%;
+  margin-left:10%;
   width: 45%;
-  height:300px;
+  height:340px;
   overflow-y: scroll;
   overflow: auto;
   background-color: #393659;
+  margin-right: 30px;
 }
+
+#iTunes-music{
+  margin-top: -340px;
+}
+
 
 #news_from_home{
   display: inline-block;
 }
 
 #news_info{
+  margin-left: 20px;
   display: inline-block;
   width: 40%;
-  height:600px;
+  height:700px;
   overflow-y: scroll;
   overflow: auto;
   background-color: #393659;
