@@ -7,6 +7,20 @@ var Clock = function(){
 }
 
 Clock.prototype = {
+  checkTime: function(time){
+    var timeInt = parseInt(time);
+    // console.log(timeInt);
+    var i;
+    var timeString = timeInt.toString()
+      if(timeInt < 10){
+        i = ("0"+timeString);
+        // console.log(i);
+      } else {
+        i = timeString;
+      }
+    return i;
+
+  },
   startClock: function(){
     var time = new Date;
     var offset = localStorage.getItem("offset");
@@ -19,14 +33,20 @@ Clock.prototype = {
     var offsetInt = parseInt(offset);
 
     var offsetHours = hoursInt + offsetInt;
+
+    var currentHours = self.checkTime(offsetHours.toString());
+    var currentMinutes = self.checkTime(time.getMinutes());
+    var currentSeconds = self.checkTime(time.getSeconds());
+    // console.log(currentMinutes);
     
-      hours.innerText = offsetHours.toString();
-      minutes.innerText = time.getMinutes();
-      seconds.innerText = time.getSeconds();
+      hours.innerText = currentHours;
+      minutes.innerText = currentMinutes;
+      seconds.innerText = currentSeconds;
       
     setTimeout(self.startClock, 1000);
   
   }
+
 }
 
 module.exports = Clock;
