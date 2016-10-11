@@ -29,7 +29,7 @@ NYTApi.prototype = {
     console.log(this.value.title);
     console.log("this" + this);
   },
-
+  /// TODO: Move this function into UI folder
   makeArticle: function(parsedJson){
     var container = document.getElementById('news_info'); 
     var ul = document.createElement('ul');

@@ -8,7 +8,8 @@ var Map =  function( container, centre, zoom ){
   });
 
   var marker;
-
+  // TODO: pass addFancyMarker into createMarker function
+  // This is to create marker for a country
   this.createMarker = function(){
     marker = new google.maps.Marker({
       map: this.googleMap,
@@ -16,7 +17,7 @@ var Map =  function( container, centre, zoom ){
       animation: google.maps.Animation.DROP
     })
   };
-
+  // This is for ISS marker
   this.addFancyMarker = function(image){
     marker.setIcon("http://localhost:3000/public/ISS-red.jpg")
   };
@@ -38,30 +39,28 @@ var Map =  function( container, centre, zoom ){
 
 
   var info_window;  
-
+  // This is for ISS Location
   this.addMarker = function(coordinates) {   
       var marker2 = new google.maps.Marker({map: this.googleMap, position: coordinates, animation: google.maps.Animation.DROP});
         info_window = new google.maps.InfoWindow({});
         info_window.open(this.googleMap, marker2);      
   };
 
-
+  // This is for ISS Location
   this.updateWindow = function(content){
     console.log("update window called")
     info_window.setContent(content);
   };
 
 
-
+  // this function if for ISS location
   this.addClickEvent = function(){
-    var self = this;
+    var self = this; // self is map
     google.maps.event.addListener(this.googleMap, 'click', function(event){
       var position = { lat: event.latLng.lat() , lng: event.latLng.lng()};
       this.addMarker(position);
       var issPassOverApi = new IssPassOverApi();
       var issPassOver = issPassOverApi.makeRequest(position, self);
-      console.log(position);
-
     }.bind(this))
   };
 
@@ -72,7 +71,7 @@ var Map =  function( container, centre, zoom ){
     return marker.position;
   };
 
-  
+  // Get country name based on latitute and longitute
   this.geocodeLatLng = function(){
     
     var geocoder = new google.maps.Geocoder;

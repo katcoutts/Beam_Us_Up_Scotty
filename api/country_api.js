@@ -20,6 +20,7 @@ CountryApi.prototype = {
     }
     request.send();
   },
+  // callback for iTunes API
   makeCountryCode: function(parsedJson, callback){
     var countryCode = parsedJson[0].alpha2Code.toLowerCase();
     callback.makeRequest(countryCode);

@@ -10,8 +10,6 @@ DarkSky.prototype = {
     request.open("GET", url)
     request.onload = function(){
      var weatherData = JSON.parse( this.responseText );
-     console.log(weatherData);
-     console.log(weatherData.offset)
      localStorage.setItem("offset", weatherData.offset)
      var clock = new Clock();
      clock.startClock()
@@ -19,7 +17,7 @@ DarkSky.prototype = {
     };
     request.send();
   },
-
+  /// TODO: Move this function into UI folder
   makeWeatherDisplay: function(weatherData){
     var container = document.getElementById("weather_info");
     var container2 = document.getElementById("sunrise_sunset");

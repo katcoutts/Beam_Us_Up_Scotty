@@ -17,11 +17,8 @@ IssPassOverApi.prototype = {
       }
       json = this.responseText;
       var parsedJson = JSON.parse(json);
-      console.log(parsedJson);
       time = (parsedJson.response[0].risetime) * 1000;
-      console.log(time);
       myDate = new Date(time);
-      console.log(myDate);
       var text = document.createElement('p');
       text.innerText = "Next pass over on "+ myDate;
       map.updateWindow(text);

@@ -1,3 +1,4 @@
+// TODO: Delete this and merge into diary_entry.js
 var NewsItem = function(options){
   this.id = options._id;
   this.title = options.title;

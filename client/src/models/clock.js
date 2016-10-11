@@ -2,19 +2,15 @@ var self;
 
 var Clock = function(){
   self = this;
-  
-
 }
 
 Clock.prototype = {
   checkTime: function(time){
     var timeInt = parseInt(time);
-    // console.log(timeInt);
     var i;
     var timeString = timeInt.toString()
       if(timeInt < 10){
         i = ("0"+timeString);
-        // console.log(i);
       } else {
         i = timeString;
       }
@@ -37,7 +33,6 @@ Clock.prototype = {
     var currentHours = self.checkTime(offsetHours.toString());
     var currentMinutes = self.checkTime(time.getMinutes());
     var currentSeconds = self.checkTime(time.getSeconds());
-    // console.log(currentMinutes);
     
       hours.innerText = currentHours;
       minutes.innerText = currentMinutes;

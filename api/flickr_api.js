@@ -17,6 +17,8 @@ FlickrApi.prototype = {
     }
     request.send();
   }, 
+
+  /// TODO: Move this function into UI folder
   makeFlickrUrl: function(parsedJson){
     var container = document.getElementById('flickrimages')
     var ul = document.createElement('ul');

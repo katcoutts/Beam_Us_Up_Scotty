@@ -81,19 +81,7 @@ var handleClockTest = function(){
 };
 
 var app = function(){
-  // var container = document.getElementById("welcome_map");
-  // var centre = {lat:0, lng:0};
-  // var zoom = 2;
-  // map = new Map( container, centre, zoom );
-
-  // var setHomeButton = document.getElementById("set_home");
-  // setHomeButton.onclick = handleSetHomeButton;
-
-  // map.createMarker();
-  // map.addClickListener();
-
-  // var submitButton = document.getElementById('submitDiary');
-
+  
   var form = document.querySelector('#diary_form');
   form.onsubmit = handleSubmitButton;
 
@@ -125,6 +113,7 @@ var app = function(){
   }
 
   var diaryEntryButton = document.querySelector('#add_diary_entry');
+  // TODO: Make this anonymous function into a separate function
   diaryEntryButton.onclick = function(){
     var header = document.querySelector('#header');
     header.style.display='none';
