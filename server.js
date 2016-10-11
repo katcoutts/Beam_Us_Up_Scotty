@@ -5,6 +5,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var DiaryApi = require('./api/diaryApi');
+var FaveNewsApi = require('./api/faveNewsApi');
 
 // public declaration 
 app.use(express.static('./client/build'));
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.listen(3000, function(){
   new DiaryApi(app);
+  new FaveNewsApi(app);
   console.log('app running on port' + this.address().port);
 });
 

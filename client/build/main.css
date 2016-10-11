@@ -67,7 +67,7 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
   text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
 }
 
-.homepage, #diaryDelButton {
+.homepage, #diaryDelButton{
   width: 300px;
   height: 150px;
   margin-left: auto;
@@ -75,16 +75,22 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
   border:1px solid darkred;
 }
 
-#diaryDelButton{
+#diaryDelButton {
   width: 100px;
   height: 40px;
   display: inline;
   font-size: 24px;
-  margin-left: 700px;
+  margin-left: 50px;
   margin-top: -150px;
 }
 
-.homepage:hover, #diaryDelButton:hover, .homepage:focus #diaryDelButton:focus{
+#newsFaveButton {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.homepage:hover, #diaryDelButton:hover, .homepage:focus #diaryDelButton:focus {
   background-color: #dd1e1e;
 }
 
@@ -135,11 +141,12 @@ form textarea{
 
 
 
-#container_for_diary_entries{
+#container_for_diary_entries, #container_for_saved_news{
   background-color: silver;
+  display: inline-block;
   color: black;
   height: 600px;
-  width: 1000px;
+  width: 500px;
   overflow-y: scroll;
   overflow: auto;
   padding-top: 40px;
@@ -153,7 +160,7 @@ ul{
   margin-top: 30px;
 }
 
-#container_for_diary_entries ul{
+#container_for_diary_entries ul, #container_for_saved_news ul{
   background-color: silver;
   margin-top: 30px;
   list-style-type: none;

@@ -8,6 +8,8 @@ var flickrApi = new FlickrApi();
 var DarkSky = require('../api/darkSkyApi');
 var darkSky = new DarkSky();
 
+var FaveNewsUI = require('./src/views/newsFaveUI');
+
 
 var Clock = require('./src/models/clock');
 
@@ -58,6 +60,7 @@ var handleSubmitButton = function(event){
       title: title 
     }
   }
+  diaryInput = JSON.stringify(diaryInput)
   // var postRequest = function(){
   //     if (this.status != 200) console.log("not 200");
   //     // var jsonString = this.responseText;
@@ -146,6 +149,7 @@ var app = function(){
     var diaryViewPage = document.querySelector('#view_diary_page');
     diaryViewPage.style.display ='block';
     new DiaryUI();
+    new FaveNewsUI();
   }
 
   var issLocationButton = document.querySelector('#iss_page_entry');

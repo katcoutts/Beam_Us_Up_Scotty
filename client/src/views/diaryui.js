@@ -34,7 +34,7 @@ DiaryUI.prototype = {
       delButton.id = "diaryDelButton";
       console.log(result);
       delButton.value = result.title;
-      delButton.onclick = this.handleDelButton
+      delButton.onclick = this.handleDelButton;
       this.appendText(li, result.title);
       this.appendText(li, result.text);
       this.appendText(li, result.date);
