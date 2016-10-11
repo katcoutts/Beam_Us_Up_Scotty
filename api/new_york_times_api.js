@@ -28,6 +28,8 @@ NYTApi.prototype = {
     console.log("this.value" + JSON.parse(this.value));
     console.log(this.value.title);
     console.log("this" + this);
+    window.alert("Saved to favourite news")
+
   },
 
   makeArticle: function(parsedJson){

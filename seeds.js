@@ -1,6 +1,5 @@
-
-
 use beam_us_up;
+db.dropDatabase();
 
 db.diary.insert([
   { 

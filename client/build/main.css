@@ -17,6 +17,11 @@ h2{
   margin-left: 20px;
 }
 
+h3{
+  margin-left: 20px;
+  font-size: 24px;
+}
+
 #landing_page{
   margin: auto;
   width: 80%;
