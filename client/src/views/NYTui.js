@@ -6,11 +6,14 @@ var NYTui = function(){
 
 NYTui.prototype = {
 
+  makeElement: function(element, text){
+    var tag = document.createElement(element);
+    tag.innerText = text;
+    return tag;
+  },
+
   handleFaveButtonClick: function(){
     faveNews.addNewsItem(this.value);
-    console.log("this.value" + JSON.parse(this.value));
-    console.log(this.value.title);
-    console.log("this" + this);
   },
   
 
@@ -20,14 +23,11 @@ NYTui.prototype = {
     for(article of parsedJson.response.docs){
       var li = document.createElement('li');
 
-      var heading = document.createElement('h3');
-      heading.innerText = article.headline.print_headline;
+      var heading = self.makeElement('h3', article.headline.print_headline);
 
-      var summary = document.createElement('p');
-      summary.innerText = article.snippet;
+      var summary = self.makeElement('p', article.snippet);
 
-      var date = document.createElement('p');
-      date.innerText = article.pub_date;
+      var date = self.makeElement('p', article.pub_date);
 
       var newsValue = {
         title: article.headline.print_headline,
