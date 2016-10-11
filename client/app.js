@@ -145,6 +145,24 @@ var handleDiaryButtonClick = function(){
     
     new DiaryUI();
     new FaveNewsUI();
+  };
+
+var handleIssButtonClick = function(){
+    var container = document.getElementById("iss_location_map");
+    var centre = {lat:0, lng:0};
+    var zoom = 2;
+    map = new Map( container, centre, zoom );
+    
+    var issLocationApi = new IssLocationApi();
+    var issLocation = issLocationApi.makeRequest(map);
+
+    setElementStyle('#header', 'none');
+    setElementStyle('#landing_page', 'none');
+    setElementStyle('#iss_location_page', 'block');
+    
+    map.createMarker();
+    map.addFancyMarker();
+    map.addClickEvent();
   }
 
 
@@ -165,23 +183,7 @@ var app = function(){
   diaryButton.onclick = handleDiaryButtonClick;
 
   var issLocationButton = document.querySelector('#iss_page_entry');
-  issLocationButton.onclick = function(){
-    var container = document.getElementById("iss_location_map");
-    var centre = {lat:0, lng:0};
-    var zoom = 2;
-    map = new Map( container, centre, zoom );
-    var issLocationApi = new IssLocationApi();
-    var issLocation = issLocationApi.makeRequest(map);
-    var header = document.querySelector('#header');
-    header.style.display='none';
-    var landingPage = document.querySelector('#landing_page');
-    landingPage.style.display='none';
-    var issLocationPage = document.querySelector('#iss_location_page');
-    issLocationPage.style.display ='block';
-    map.createMarker();
-    map.addFancyMarker();
-    map.addClickEvent();
-  }
+  issLocationButton.onclick = handleIssButtonClick;
 
   var homePageButtons = document.querySelectorAll('.homepage')
     for (var homePageButton of homePageButtons){
