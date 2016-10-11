@@ -50,6 +50,7 @@ var handleSubmitButton = function(event){
       title: title 
     }
   }
+  diaryInput = JSON.stringify(diaryInput)
   // var postRequest = function(){
   //     if (this.status != 200) console.log("not 200");
   //     // var jsonString = this.responseText;
