@@ -130,11 +130,27 @@ var app = function(){
     var diaryEntryPage = document.querySelector('#diary_entry_form');
     diaryEntryPage.style.display='block';
     var diarySubmitButton = document.querySelector('#submitDiary');
+
+    // Get default value for today
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0
+    var yyyy = today.getFullYear();
+    if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+    var today = yyyy+'-'+mm+'-'+dd;
+    console.log(today);
+    document.getElementById("date").setAttribute('value', today);
+
     diarySubmitButton.onclick = function(){
       var diaryEntryPage = document.querySelector('#diary_entry_form');
       diaryEntryPage.style.display='none';
       var diaryViewPage = document.querySelector('#view_diary_page');
-      diaryViewPage.style.display ='block';
+      diaryViewPage.style.display ='block'
       new DiaryUI();
       location.reload();
     }
