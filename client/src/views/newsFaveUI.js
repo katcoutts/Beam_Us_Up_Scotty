@@ -20,7 +20,7 @@ NewsFaveUI.prototype = {
     element.appendChild(pTag);
   },
 
-  handleDelButton: function(){
+  handleNewsDelButton: function(){
     console.log(this.value);
     faveNews.deleteNewsItem(this.value);
     location.reload();
@@ -33,16 +33,16 @@ NewsFaveUI.prototype = {
     for(var result of results) {
       var li = document.createElement("li");
       
-      // var newsDelButton = document.createElement("button");
-      // newsDelButton.id = "newsDelButton";
-      // console.log(result);
-      // newsDelButton.value = result.title;
-      // newsDelButton.onclick = this.handleNewsDelButton
+      var newsDelButton = document.createElement("button");
+      newsDelButton.id = "newsDelButton";
+      console.log(result);
+      newsDelButton.value = result.title;
+      newsDelButton.onclick = this.handleNewsDelButton
       this.appendText(li, result.title);
-      this.appendText(li, result.text);
+      this.appendText(li, result.summary);
       this.appendText(li, result.date);
-      // newsDelButton.innerText = "Delete";
-      // li.appendChild(newsDelButton);
+      newsDelButton.innerText = "Delete";
+      li.appendChild(newsDelButton);
       ul.appendChild(li);
       container.appendChild(ul);
     }

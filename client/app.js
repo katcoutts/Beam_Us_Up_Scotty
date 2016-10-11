@@ -13,6 +13,9 @@ var FaveNewsUI = require('./src/views/newsFaveUI');
 
 var Clock = require('./src/models/clock');
 
+var ITunesApi = require('../api/iTunes_api');
+var iTunesApi = new ITunesApi();
+
 
 
 
@@ -41,7 +44,7 @@ var handleSetHomeButton = function(){
   // iTunesApi.makeRequest();
   darkSky.makeRequest(latlng, Clock);
 
-  countryApi.makeRequest(country);
+  countryApi.makeRequest(country, iTunesApi);
 
   
 
