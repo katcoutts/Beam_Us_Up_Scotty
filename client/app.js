@@ -1,6 +1,7 @@
 var Ajax = require('./src/models/ajax');
 
 var NYTApi = require('../api/new_york_times_api');
+var NYTui = require('./src/views/NYTui');
 var nytApi = new NYTApi();
 var FlickrApi = require('../api/flickr_api');
 var FlickrUi = require('./src/views/flickrUi');
@@ -31,6 +32,7 @@ var handleSetHomeButton = function(){
   var darkSkyUi = new DarkSkyUi();
   var flickrUi = new FlickrUi();
   var iTunesUi = new ITunesUi();
+  var nYTui = new NYTui();
   
   
   // var array = map.geocodeLatLng();
@@ -41,7 +43,7 @@ var handleSetHomeButton = function(){
 
   var nytrequest = localStorage.getItem("region and country")
 
-  nytApi.makeRequest(country);
+  nytApi.makeRequest(country, nYTui.makeArticle);
   flickrApi.makeRequest(country, flickrUi.makeFlickrUrl);
   // iTunesApi.makeRequest();
   darkSky.makeRequest(latlng, Clock, darkSkyUi.makeWeatherDisplay);

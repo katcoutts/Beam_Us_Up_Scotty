@@ -23,7 +23,12 @@ ITunesUi.prototype = {
   
   makeITunesUrl: function(parsedJson){
     var container = document.getElementById('iTunes-music');
-    var ul = document.createElement('ul');
+    var ul = document.createElement('ul'); 
+      if (parsedJson.feed.entry === undefined){
+        var iTunesDiv = document.getElementById("iTunes-music");
+        iTunesDiv.style.display = "none";
+        return
+      }
       for (var i = 0; i < parsedJson.feed.entry.length; i++){
         // Getting elements form json 
         
