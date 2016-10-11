@@ -6,7 +6,7 @@ DarkSky.prototype = {
   makeRequest: function(latlng, Clock){
     var request = new XMLHttpRequest();
     var self = this;
-    var url = "https://api.darksky.net/forecast/300c779353c13edd690f729a0f9e8b31/"+latlng.lat()+","+latlng.lng()+"?units=auto"
+    var url = "https://api.darksky.net/forecast/300c779353c13edd690f729a0f9e8b31/"+latlng.lat()+","+latlng.lng()+"?units=uk2"
     request.open("GET", url)
     request.onload = function(){
      var weatherData = JSON.parse( this.responseText );
@@ -25,7 +25,7 @@ DarkSky.prototype = {
     var container2 = document.getElementById("sunrise_sunset");
 
     var currentTemp = document.createElement("p");
-    currentTemp.innerText = "Current Temperature: "+weatherData.currently.temperature;
+    currentTemp.innerText = "Current Temperature: "+weatherData.currently.temperature + " °C";
     currentTemp.id = "currentTemp";
 
     var weatherSummary = document.createElement("p");

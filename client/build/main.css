@@ -14,6 +14,7 @@ h2{
   color: silver;
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
+  margin-left: 20px;
 }
 
 #landing_page{
@@ -67,7 +68,7 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
   text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
 }
 
-.homepage, #diaryDelButton{
+.homepage, #diaryDelButton, #newsDelButton{
   width: 300px;
   height: 150px;
   margin-left: auto;
@@ -84,13 +85,22 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
   margin-top: -150px;
 }
 
+#newsDelButton{
+  width: 100px;
+  height: 40px;
+  display: inline;
+  font-size: 24px;
+  margin-left: 300px;
+  margin-top: -150px;
+}
+
 #newsFaveButton {
   width: 100px;
   height: 40px;
   font-size: 16px;
 }
 
-.homepage:hover, #diaryDelButton:hover, .homepage:focus #diaryDelButton:focus {
+.homepage:hover, #diaryDelButton:hover, #newsDelButton:hover, .homepage:focus, #diaryDelButton:focus, #newsDelButton:focus {
   background-color: #dd1e1e;
 }
 
@@ -210,22 +220,29 @@ p:nth-child(2){
 #flickrimages, #iTunes-music{
   display: inline-block;
   float: right;
-  margin-left:15%;
+  margin-left:10%;
   width: 45%;
-  height:300px;
+  height:340px;
   overflow-y: scroll;
   overflow: auto;
   background-color: #393659;
+  margin-right: 30px;
 }
+
+#iTunes-music{
+  margin-top: -340px;
+}
+
 
 #news_from_home{
   display: inline-block;
 }
 
 #news_info{
+  margin-left: 20px;
   display: inline-block;
   width: 40%;
-  height:600px;
+  height:700px;
   overflow-y: scroll;
   overflow: auto;
   background-color: #393659;
@@ -237,7 +254,7 @@ p:nth-child(2){
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   font-size: 18px;
-  margin-left: 100px;
+  margin-left: 300px;
 }
 
 #weatherSummary{
@@ -262,8 +279,14 @@ p:nth-child(2){
   font-family: 'Open Sans', sans-serif;
 }
 
-b{
+
+#clock{
   color: red;
+  font-size: 80px;
+  width: 250px;
+  height: 100px;
+  display: inline-block;
+  margin-left: 30px;
 }
 
 
