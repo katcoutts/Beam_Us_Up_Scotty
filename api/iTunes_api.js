@@ -18,6 +18,7 @@ ITunesApi.prototype = {
     }
     request.send();
   }, 
+  /// TODO: Move this function into UI folder
   makeITunesUrl: function(parsedJson){
     var container = document.getElementById('iTunes-music');
     var ul = document.createElement('ul');

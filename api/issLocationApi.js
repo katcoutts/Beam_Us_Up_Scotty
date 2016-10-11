@@ -11,7 +11,6 @@ IssLocationApi.prototype = {
       }
       json = this.responseText;
       var parsedJson = JSON.parse(json);
-      console.log(parsedJson);
       var newCoords = {
         lat:parsedJson.iss_position.latitude,
         lng:parsedJson.iss_position.longitude

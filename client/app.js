@@ -71,6 +71,7 @@ var handleSubmitButton = function(event){
 
 
 
+
 var app = function(){
   
   var form = document.querySelector('#diary_form');
@@ -104,6 +105,7 @@ var app = function(){
   }
 
   var diaryEntryButton = document.querySelector('#add_diary_entry');
+  // TODO: Make this anonymous function into a separate function
   diaryEntryButton.onclick = function(){
     var header = document.querySelector('#header');
     header.style.display='none';
