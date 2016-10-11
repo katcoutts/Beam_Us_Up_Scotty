@@ -3,13 +3,18 @@ var DarkSky = function(){
 }
 
 DarkSky.prototype = {
-  makeRequest: function(latlng){
+  makeRequest: function(latlng, Clock){
     var request = new XMLHttpRequest();
     var self = this;
-    var url = "https://api.darksky.net/forecast/300c779353c13edd690f729a0f9e8b31/"+latlng.lat()+","+latlng.lng()+"?units=uk2"
+    var url = "https://api.darksky.net/forecast/300c779353c13edd690f729a0f9e8b31/"+latlng.lat()+","+latlng.lng()+"?units=auto"
     request.open("GET", url)
     request.onload = function(){
      var weatherData = JSON.parse( this.responseText );
+     console.log(weatherData);
+     console.log(weatherData.offset)
+     localStorage.setItem("offset", weatherData.offset)
+     var clock = new Clock();
+     clock.startClock()
      self.makeWeatherDisplay(weatherData);
     };
     request.send();

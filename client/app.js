@@ -8,6 +8,14 @@ var flickrApi = new FlickrApi();
 var DarkSky = require('../api/darkSkyApi');
 var darkSky = new DarkSky();
 
+var FaveNewsUI = require('./src/views/newsFaveUI');
+
+
+var Clock = require('./src/models/clock');
+
+
+
+
 var DiaryUI = require('./src/views/diaryui');
 var IssLocationApi = require('../api/issLocationApi');
 var CountryApi = require('../api/country_api');
@@ -18,6 +26,7 @@ var map;
 
 var handleSetHomeButton = function(){
   var latlng = map.markerPosition()
+  
   
   // var array = map.geocodeLatLng();
   var country = localStorage.getItem("country");
@@ -30,8 +39,12 @@ var handleSetHomeButton = function(){
   nytApi.makeRequest(country);
   flickrApi.makeRequest(country);
   // iTunesApi.makeRequest();
-  darkSky.makeRequest(latlng);
+  darkSky.makeRequest(latlng, Clock);
+
   countryApi.makeRequest(country);
+
+  
+
 };
 
 var handleSubmitButton = function(event){
@@ -47,6 +60,7 @@ var handleSubmitButton = function(event){
       title: title 
     }
   }
+  diaryInput = JSON.stringify(diaryInput)
   // var postRequest = function(){
   //     if (this.status != 200) console.log("not 200");
   //     // var jsonString = this.responseText;
@@ -57,6 +71,10 @@ var handleSubmitButton = function(event){
   // };
   console.log("before makePostRequest in app.js");
   ajax.makePostRequest('/api/diary', diaryInput )
+};
+
+var handleClockTest = function(){
+  
 };
 
 var app = function(){
@@ -131,6 +149,7 @@ var app = function(){
     var diaryViewPage = document.querySelector('#view_diary_page');
     diaryViewPage.style.display ='block';
     new DiaryUI();
+    new FaveNewsUI();
   }
 
   var issLocationButton = document.querySelector('#iss_page_entry');
@@ -158,8 +177,8 @@ var app = function(){
     location.reload();
   }
   }
+ 
 
-
-}
+  }
 
 window.onload = app;
