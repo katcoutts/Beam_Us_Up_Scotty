@@ -1,9 +1,14 @@
+var self;
 var ITunesUi = function(){
-
+  self = this;
 }
 
 ITunesUi.prototype = {
-  
+  makePTag: function(text){
+    var ptag = document.createElement('p');
+    ptag.innerText = text;
+    return ptag;
+  },
   makeITunesUrl: function(parsedJson){
     var container = document.getElementById('iTunes-music');
     var ul = document.createElement('ul');
@@ -17,10 +22,9 @@ ITunesUi.prototype = {
       
       // Creating tags and passing text 
       var div = document.createElement('div');
-      var songNameParagraph = document.createElement('p');
-      var artistParagraph = document.createElement('p');
-      songNameParagraph.innerText = "Song Name: " + songName;
-      artistParagraph.innerText = "Artist: " + artist;
+      var songNameParagraph = self.makePTag("Song Name: " + songName);
+      var artistParagraph = self.makePTag("Artist: " + artist);
+      
       var img = document.createElement('img');
       img.setAttribute('src', image);
       
