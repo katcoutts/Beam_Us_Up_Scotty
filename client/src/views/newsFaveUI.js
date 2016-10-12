@@ -30,12 +30,13 @@ NewsFaveUI.prototype = {
     console.log(results);
     var container = document.getElementById("container_for_saved_news");
     var ul = document.getElementById("saved_news");
+    ul.setAttribute('id', 'saved-news-ul')
     for(var result of results) {
       var li = document.createElement("li");
+      li.setAttribute('id', 'saved-news-li')
       
       var newsDelButton = document.createElement("button");
       newsDelButton.id = "newsDelButton";
-      console.log(result);
       newsDelButton.value = result.title;
       newsDelButton.onclick = this.handleNewsDelButton
       this.appendText(li, result.title);

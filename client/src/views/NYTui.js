@@ -26,7 +26,7 @@ NYTui.prototype = {
     var ul = document.createElement('ul');
     for(article of parsedJson.response.docs){
       var li = document.createElement('li');
-
+      li.setAttribute('class', 'nyt-li')
       var heading = self.makeElement('h3', article.headline.print_headline);
 
       var summary = self.makeElement('p', article.snippet);

@@ -73,7 +73,12 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
   text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
 }
 
+#flickr-h2, #iTunes-h2{
+  margin-bottom: 0px;
+}
+
 .homepage, #diaryDelButton, #newsDelButton{
+  margin: 50px;
   width: 300px;
   height: 150px;
   margin-left: auto;
@@ -113,7 +118,13 @@ button:hover, button:focus, form input[type=submit]:hover, form input[type=submi
   margin: auto;
   width: 90%;
 }
-
+#diary_form{
+  width: 700px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: grey;
+  opacity:0.7;
+}
 #diary_entry_form{
   width: 90%;
   margin: auto;
@@ -153,10 +164,16 @@ form textarea{
 .page_header{
   text-align: left;
 }
+#diary-result-li{
+  width: 400px;
+}
 
-
-
+h2{
+  margin-left: 50px;
+}
 #container_for_diary_entries, #container_for_saved_news{
+  opacity: 0.8;
+  border-radius: 10px;
   background-color: silver;
   display: inline-block;
   color: black;
@@ -307,9 +324,6 @@ html, body,  ul, #iTunes-li{
   margin-left: 60px
 }
 
-#audio{
-
-}
 #iTunes-ul{
   display:flex;
 }
@@ -325,3 +339,19 @@ html, body,  ul, #iTunes-li{
   display:flex;
 }
 
+.homepage{
+  margin-left: 80px;
+}
+#saved-news-ul{
+  width: 400px;
+}
+.saved-news-li{
+  margin: 0px auto 0px auto;
+}
+
+#view_diary_page, #container_for_diary_entries{
+  font-family: 'Open Sans', sans-serif;
+}
+.nyt-li{
+  width:380px;
+}
