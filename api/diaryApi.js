@@ -10,10 +10,6 @@ var DiaryApi = function(app) {
   });
 
   app.post('/api/diary', function(req, res) {
-    // var string = JSON.parse(req.body.entry)
-    // console.log("req" + req);
-    // console.log("res" + res);
-    console.log(req.body);
     query.send(req.body.entry);
   });
 

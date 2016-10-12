@@ -24,6 +24,7 @@ ITunesUi.prototype = {
   makeITunesUrl: function(parsedJson){
     var container = document.getElementById('iTunes-music');
     var ul = document.createElement('ul'); 
+    ul.setAttribute('id', 'iTunes-ul');
       if (parsedJson.feed.entry === undefined){
         var iTunesDiv = document.getElementById("iTunes-music");
         iTunesDiv.style.display = "none";
@@ -40,25 +41,28 @@ ITunesUi.prototype = {
         // Creating tags and passing text 
         var div = document.createElement('div');
         var songNameParagraph = self.makePTag("Song Name: " + songName);
+        songNameParagraph.setAttribute('id', 'songNameP');
         var artistParagraph = self.makePTag("Artist: " + artist);
+        artistParagraph.setAttribute('id', 'artistP');
         
         var img = self.makeElement('img', 'src', image);
-              
+        img.setAttribute('id', 'iTunes-img');    
         // Creating tags for audio
         var mp4 = parsedJson.feed.entry[i].link[1].attributes.href;
         var li = document.createElement('li');
+        li.setAttribute('id', 'iTunes-li');
         var audio = self.makeElement("audio", 'controls', true);
-
+        audio.setAttribute('id', 'audio');
         var source = document.createElement('source');
         source.setAttribute('src', mp4);
         source.setAttribute('type', 'audio/mp4');
 
         // Creating DOM
         self.appendToContainer(audio, source);
-        self.appendToContainer(li, audio);
+        self.appendToContainer(li, img);
         self.appendToContainer(li, songNameParagraph);
         self.appendToContainer(li, artistParagraph);
-        self.appendToContainer(li, img);
+        self.appendToContainer(li, audio);
         self.appendToContainer(ul, li);
       }
       self.appendToContainer(container, ul);

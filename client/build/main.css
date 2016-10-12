@@ -297,4 +297,31 @@ p:nth-child(2){
   margin-left: 30px;
 }
 
+/*iTunes Div*/
+html, body,  ul, #iTunes-li{
+  width:100%;
+}
+
+
+#iTunes-img{
+  margin-left: 60px
+}
+
+#audio{
+
+}
+#iTunes-ul{
+  display:flex;
+}
+#songNameP{
+  
+  width:50%;
+}
+#artistP{
+  width:50%;
+}
+/*Flickr Div*/
+#flickr-ul{
+  display:flex;
+}
 
