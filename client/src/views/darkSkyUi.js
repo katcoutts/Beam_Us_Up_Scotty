@@ -17,6 +17,19 @@ DarkSkyUi.prototype = {
     return pTag;
   },
 
+  checkTime: function(time){
+    var timeInt = parseInt(time);
+    var i;
+    var timeString = timeInt.toString()
+      if(timeInt < 10){
+        i = ("0"+timeString);
+      } else {
+        i = timeString;
+      }
+    return i;
+
+  },
+
   appendToContainer: function(container, element){
     container.appendChild(element);
   },
@@ -30,12 +43,12 @@ DarkSkyUi.prototype = {
 
     var weatherSummary = self.makePtag("weatherSummary", "Summary: " + weatherData.daily.data[0].summary);
    
-    var dateSunrise = new Date(((weatherData.daily.data[0].sunriseTime)*1000)+(weatherData.offset*60*60*1000));
-    var dateSunset = new Date(((weatherData.daily.data[0].sunsetTime)*1000)+(weatherData.offset*60*60*1000));
+    var dateSunrise = new Date(((weatherData.daily.data[0].sunriseTime)*1000)+((weatherData.offset - 1)*60*60*1000));
+    var dateSunset = new Date(((weatherData.daily.data[0].sunsetTime)*1000)+((weatherData.offset - 1)*60*60*1000));
     
-    var sunrise = self.makePtag("sunriseTime", "Sunrise: " + dateSunrise.getDate() + "/"+ (dateSunrise.getMonth()+1)+ " "+dateSunrise.getHours()+":"+dateSunrise.getMinutes());
+    var sunrise = self.makePtag("sunriseTime", "Sunrise: " + self.checkTime(dateSunrise.getDate()) + "/"+ self.checkTime((dateSunrise.getMonth()+1))+ "/"+dateSunrise.getFullYear()+" "+self.checkTime(dateSunrise.getHours())+":"+self.checkTime(dateSunrise.getMinutes()));
     
-    var sunset = self.makePtag("sunsetTime", "Sunset: " + dateSunset.getDate() + "/"+ (dateSunset.getMonth()+1)+ " "+dateSunset.getHours()+":"+dateSunset.getMinutes());
+    var sunset = self.makePtag("sunsetTime", "Sunset: " + self.checkTime(dateSunset.getDate()) + "/"+ self.checkTime((dateSunset.getMonth()+1))+ "/"+dateSunset.getFullYear()+" "+self.checkTime(dateSunset.getHours())+":"+self.checkTime(dateSunset.getMinutes()));
 
     var sun = self.makeWeatherImage("http://localhost:3000/public/Sunimg.jpg");
     var moon = self.makeWeatherImage("http://localhost:3000/public/weemoonimg.jpg")    

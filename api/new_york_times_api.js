@@ -5,8 +5,7 @@ var FaveNews = require('../client/src/models/faveNews');
 var faveNews = new FaveNews();
 
 var NYTApi = function(){
-  
-  
+   
 }
 
 NYTApi.prototype = {
