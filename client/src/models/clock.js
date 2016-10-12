@@ -28,7 +28,7 @@ Clock.prototype = {
     var hoursInt = parseInt(time.getHours());
     var offsetInt = parseInt(offset);
 
-    var offsetHours = hoursInt + offsetInt;
+    var offsetHours = hoursInt + (offsetInt - 1);
 
     var currentHours = self.checkTime(offsetHours.toString());
     var currentMinutes = self.checkTime(time.getMinutes());
