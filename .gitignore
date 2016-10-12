@@ -1,3 +1,4 @@
 /node_modules
 /client/build/bundle.js
+/client/src/models/keys.js
 
