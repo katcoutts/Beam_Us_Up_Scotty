@@ -2,8 +2,6 @@
 
 An astronaut is going to the International Space Station and has requested that you build a browser based dashboard for them to use on board the ISS. They want to keep up to date with what's going on in their home city to stop them from getting too homesick. They also want to be able to write a diary to send back home...
 
-### Photos here
-
 This is our Week 12 Group Project, a 7-day hackathon at [CodeClan](https://codeclan.com/) where we introduced the use of APIs and MongoDB by creating a sinble-page web application with JS. 
 
 ## Project Objectives 
@@ -16,7 +14,15 @@ This is our Week 12 Group Project, a 7-day hackathon at [CodeClan](https://codec
 ## Installation
 - To get started, you need to install MongoDB in your computer. run the following command in your terminal.
 ```
-
+brew update -> will give error
+sudo chmod 777 /usr/local
+sudo mkdir data
+cd /data
+sudo mkdir db
+brew update
+sudo chmod 777 /data/db
+brew install mongodb
+type mongo to confirm
 ```
 - In order to use third-party API, you need to get API keys for Flickr and New York Times API. Go to their websites and get the keys. 
 
