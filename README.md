@@ -70,3 +70,7 @@ Then open a browser and visit localhost: 3000
 - [Dark Sky API](https://darksky.net/dev/)
 - [ISS Location API](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)
 
+### Screenshots
+
+Home news screen for east of US:
+<img width="1270" alt="screen shot 2016-10-16 at 15 07 15" src="https://cloud.githubusercontent.com/assets/17859815/19417995/c20bb508-93b2-11e6-9fe0-1180865c078a.png">
