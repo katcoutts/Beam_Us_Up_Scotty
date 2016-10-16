@@ -74,3 +74,6 @@ Then open a browser and visit localhost: 3000
 
 Home news screen for east of US:
 <img width="1270" alt="screen shot 2016-10-16 at 15 07 15" src="https://cloud.githubusercontent.com/assets/17859815/19417995/c20bb508-93b2-11e6-9fe0-1180865c078a.png">
+
+Screenshot of page showing current location of the ISS and providing pass over times for locations clicked:
+<img width="1272" alt="screen shot 2016-10-16 at 15 06 52" src="https://cloud.githubusercontent.com/assets/17859815/19418018/411e69f8-93b3-11e6-8492-884da5c79ede.png">
