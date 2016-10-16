@@ -77,3 +77,6 @@ Home news screen for east of US:
 
 Screenshot of page showing current location of the ISS and providing pass over times for locations clicked:
 <img width="1272" alt="screen shot 2016-10-16 at 15 06 52" src="https://cloud.githubusercontent.com/assets/17859815/19418018/411e69f8-93b3-11e6-8492-884da5c79ede.png">
+
+Screenshot of page showing saved diary entries and favourited news items:
+<img width="1259" alt="screen shot 2016-10-16 at 15 07 42" src="https://cloud.githubusercontent.com/assets/17859815/19418032/7f40a516-93b3-11e6-9681-b960ddec9420.png">
