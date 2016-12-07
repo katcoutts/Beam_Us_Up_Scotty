@@ -37,7 +37,11 @@ npm install
 ```
 - In order to run the app, you need to run local server, webPack, MongoDB. Firstly, run the following command in the terminal 
 ```
-nodemon server.js
+nodemon server.js 
+```
+or 
+```
+node server.js
 ```
 -  Next, go into the client directory and run the following command 
 ```
