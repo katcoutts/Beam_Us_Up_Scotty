@@ -12,9 +12,10 @@ IssLocationApi.prototype = {
       json = this.responseText;
       var parsedJson = JSON.parse(json);
       var newCoords = {
-        lat:parsedJson.iss_position.latitude,
-        lng:parsedJson.iss_position.longitude
+        lat:parseInt(parsedJson.iss_position.latitude),
+        lng:parseInt(parsedJson.iss_position.longitude)
       } 
+      console.log(newCoords);
       map.setMarker(newCoords);
 
     }
